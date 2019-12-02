@@ -4,6 +4,8 @@ $maxWidth: 100%;
 
 body {
     display: flex;
+    flex-direction: row;
+    float: wrap;
     header {
         width: 100%;
         height: 150px;
