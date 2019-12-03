@@ -1,0 +1,35 @@
+body {
+  background-image: url("../img/startimg.jpg");
+  background-color: #cccccc;
+  height: 800px;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  color: white; }
+  body h1 {
+    text-align: center;
+    margin-top: 100px; }
+  body p {
+    text-align: center;
+    margin-top: 200px;
+    font-weight: bold; }
+  body #ageinput {
+    width: 20%;
+    margin: 10px auto;
+    border: 1px solid white;
+    background-color: gray;
+    border-radius: 5px; }
+
+@media screen and (min-width: 768px) {
+  body {
+    background-position: center; }
+    body #ageinput {
+      width: 11%; } }
+
+@media screen and (min-width: 992px) {
+  body {
+    background-position: center; }
+    body #ageinput {
+      width: 5%; } }
