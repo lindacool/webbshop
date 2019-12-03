@@ -10,17 +10,39 @@
     @media (min-width: 992px) { @content; }
 }
 
+
+@import url(../font/firstorder.ttf);
+
 body {
+    padding: 0;
     display: flex;
     flex-direction: column;
     flex: wrap;
     header {
         width: 100%;
-        height: 400px;
-        //background-image: url(../img/michael-benz--IZ2sgQKIhM-unsplash.jpg);
+        height: 650px;
+        background-image: url(../img/header.jpg);
+        background-position: center;
+        background-size: cover;
         background-color: green;
         text-align: center;
         h1 {
+            margin-top: 250px;
+            margin-bottom: 0px;
+            font-size: 5em;
+            color: white;
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+            font-weight: 900;
+            font-family: "firstorder";
+            text-transform: uppercase;
+        }
+        h3 {
+            margin-top: 0px;
+            font-size: 3em;
+            color: white;
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+            font-weight: 900;
+            font-family: "firstorder";
 
         }
     }
