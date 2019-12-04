@@ -1,0 +1,60 @@
+$colorfooter:rgb(37, 37, 37);
+
+@mixin tablet {
+    @media (min-width: 768px) { @content; }
+}
+
+@mixin desktop {
+    @media (min-width: 992px) { @content; }
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    background-color: rgba(37, 37, 37, 0.2);
+    flex-wrap: wrap;
+    padding: 10px;
+    font-size: 14px;
+   
+    .content {
+        color: $colorfooter;
+        width: 50%;
+        // padding-top: 10px;
+        padding: 10px;
+
+
+        ul{
+            list-style-type: none;
+            padding: 0;
+            
+        li{
+            padding: 3px;
+            
+        }
+        li a{
+            color: $colorfooter;
+        }
+        a:hover {
+            color:rgb(63, 63, 63);
+          }
+        }
+
+    }
+    .socialmedia {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        width: 40%;
+        @include tablet{
+            width: 20%;
+        }
+        a {
+            color: $colorfooter;
+        }
+        i {
+            font-size: 2em;
+            padding-bottom: 15px;
+        }
+    }
+}

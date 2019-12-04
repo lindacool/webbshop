@@ -2,6 +2,41 @@
 #accordion {
   margin-left: 10px; }
 
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgba(37, 37, 37, 0.2);
+  flex-wrap: wrap;
+  padding: 10px;
+  font-size: 14px; }
+  .footer-content .content {
+    color: #252525;
+    width: 50%;
+    padding: 10px; }
+    .footer-content .content ul {
+      list-style-type: none;
+      padding: 0; }
+      .footer-content .content ul li {
+        padding: 3px; }
+      .footer-content .content ul li a {
+        color: #252525; }
+      .footer-content .content ul a:hover {
+        color: #3f3f3f; }
+  .footer-content .socialmedia {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 40%; }
+    @media (min-width: 768px) {
+      .footer-content .socialmedia {
+        width: 20%; } }
+    .footer-content .socialmedia a {
+      color: #252525; }
+    .footer-content .socialmedia i {
+      font-size: 2em;
+      padding-bottom: 15px; }
+
 body {
   padding: 0;
   display: flex;
@@ -18,34 +53,57 @@ body {
     body header h1 {
       margin-top: 250px;
       margin-bottom: 0px;
-      font-size: 5em;
+      font-size: 4em;
       color: white;
       text-shadow: 0px 0px 5px black;
       font-weight: 900;
       font-family: "firstorder";
       text-transform: uppercase; }
+      @media (min-width: 768px) {
+        body header h1 {
+          font-size: 5em; } }
     body header h3 {
       margin-top: 0px;
-      font-size: 3em;
+      font-size: 2em;
       color: white;
       text-shadow: 0px 0px 5px black;
       font-weight: 900;
       font-family: "firstorder"; }
+      @media (min-width: 768px) {
+        body header h3 {
+          font-size: 3em; } }
   body nav {
     width: 100%;
     height: 50px;
     background-color: lightgreen; }
   body .main-content {
     width: 100%;
-    height: 200px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: blue; }
+    background-color: white;
+    padding-bottom: 15px;
+    flex-wrap: wrap; }
+    body .main-content #highlight1 {
+      background-image: url(../img/hemmabryggeri.jpeg);
+      background-position: center;
+      background-size: cover; }
+    body .main-content #highlight2 {
+      background-image: url(../img/ren.jpg);
+      background-position: center;
+      background-size: cover; }
+    body .main-content #highlight3 {
+      background-image: url(../img/bastu.jpeg);
+      background-position: center;
+      background-size: cover; }
     body .main-content .content {
-      width: 30%;
-      height: 180px;
-      border: 1px solid; }
+      width: 90%;
+      height: 300px;
+      border: 1px solid;
+      margin-bottom: 10px; }
+      @media (min-width: 768px) {
+        body .main-content .content {
+          width: 30%; } }
   body footer {
     display: flex;
     flex-direction: row;
