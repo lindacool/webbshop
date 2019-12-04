@@ -42,13 +42,51 @@ body {
   display: flex;
   flex-direction: column;
   flex: wrap; }
+  body .second-header {
+    width: 100%;
+    height: 150px;
+    background-image: url(../img/dryckheader.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center; }
+    body .second-header .second-logo {
+      margin-top: 45px;
+      margin-bottom: 0px;
+      font-size: 2.5em;
+      color: white;
+      text-shadow: 0px 0px 5px black;
+      font-weight: 900;
+      font-family: "firstorder";
+      text-transform: uppercase; }
+      @media (min-width: 768px) {
+        body .second-header .second-logo {
+          font-size: 4em; } }
+
+.productcontainer {
+  border: 1px solid black;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center; }
+  .productcontainer .productname {
+    font-size: large;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+  .productcontainer .productimg {
+    width: 50%;
+    height: auto; }
+
+body {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: wrap; }
   body header {
     width: 100%;
     height: 650px;
     background-image: url(../img/header.jpg);
     background-position: center;
     background-size: cover;
-    background-color: green;
     text-align: center; }
     body header h1 {
       margin-top: 250px;

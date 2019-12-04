@@ -1,5 +1,7 @@
 @import 'nav';
 @import 'footer';
+@import 'header';
+@import 'products';
 
 @mixin smallphone {
     @media (max-width: 576px) { @content; }
@@ -27,7 +29,6 @@ body {
         background-image: url(../img/header.jpg);
         background-position: center;
         background-size: cover;
-        background-color: green;
         text-align: center;
         h1 {
             margin-top: 250px;

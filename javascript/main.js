@@ -2,35 +2,41 @@ $(document).ready(function() {
 
 
     function Product(n,p,d,i) {
-        this.name;
-        this.price;
-        this.description;
-        this.img;
+        this.name = n;
+        this.price = p;
+        this.description = d;
+        this.img = i;
     }
     let hb = new Product('Crazy Moose',500,'Finaste HB filtrerat genom vargskägg','img/dunk.jpg');
+    let explorer = new Product('Explorer',150,'Från Tyskland','img/explorer.jpg')
     let egetsnus = new Product('Göre själv',100,'Inte så jävla gott, men billigt','img/egetsnus.jpg');
     let ettan = new Product('Ettan',43,'Ett gott snus','img/ettan.jpg');
+    let snokedja = new Product('Snökedja',1000,'Kör fö fa-an','img/deck.jpeg')
+    let norrlands = new Product('Norrlands Guld',200,'Vid köp av tio flak, får du ett "Göre själv" snus-paket!','img/norrlands.png')
+    
 
-    let products = [hb, egetsnus, ettan];
-
+    let products = [hb, norrlands, explorer, egetsnus, ettan, snokedja];
+    // let newDiv = '';
     $(products).each(function(i){
-        let newDiv = $('<div>');
-        newDiv.addClass('productcontainer');
+        let newDiv = $('<div>').addClass('productcontainer');
         let productName = $('<p>').html(products[i].name);
         productName.addClass('productname');
         newDiv.append(productName);
         let productImg = $('<img>');
-        productImg.src = products[i].img;
+        productImg.attr('src', products[i].img);
         productImg.addClass('productimg');
         newDiv.append(productImg);
-        let productPrice = $('<span>').html(products[i].price)
+        let productPrice = $('<span>').html(`${products[i].price} kr`);
         productPrice.addClass('productprice');
         newDiv.append(productPrice);
         let productDescription = $('<p>').html(products[i].description);
         productDescription.addClass('productdescription');
         newDiv.append(productDescription);
-        console.log(newDiv)
+        console.log(newDiv);
+        $('#brorsan').append(newDiv);
+        console.log(products[i].img);
+        
     });
-
+    
 })
 
