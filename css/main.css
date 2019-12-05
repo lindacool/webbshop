@@ -1,12 +1,33 @@
 @import url(../font/firstorder.ttf);
 .navcontainer {
   position: relative; }
-  .navcontainer .js-toggleMenu {
+  .navcontainer .deercontainer {
+    background-image: url(../img/polartablet.jpg);
+    background-position: center;
+    background-size: cover;
     position: relative;
+    left: 10px;
+    top: 10px;
+    display: none;
+    height: 50px;
+    width: 40px; }
+    @media (min-width: 768px) {
+      .navcontainer .deercontainer {
+        display: block; } }
+  .navcontainer .js-toggleMenu {
+    background-image: url(../img/polar.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    left: 10px;
+    top: 10px;
     z-index: 9;
-    height: 40px;
+    height: 50px;
     width: 40px;
-    background-color: gray; }
+    border: none; }
+    @media (min-width: 768px) {
+      .navcontainer .js-toggleMenu {
+        display: none; } }
   .navcontainer .js-menu {
     width: 50%;
     display: none;
@@ -16,6 +37,7 @@
     left: 0;
     z-index: 8; }
     .navcontainer .js-menu .js-toggleDrink {
+      margin-top: 10px;
       font-weight: bold;
       position: relative; }
     .navcontainer .js-menu .js-drinkMenu {
@@ -181,10 +203,6 @@ body {
       @media (min-width: 768px) {
         body header h3 {
           font-size: 3em; } }
-  body nav {
-    width: 100%;
-    height: 50px;
-    background-color: lightgreen; }
   body .main-content {
     width: 100%;
     display: flex;
@@ -195,12 +213,15 @@ body {
     flex-wrap: wrap; }
     body .main-content #highlight1 {
       background-image: url(../img/hemmabryggeri.jpeg);
-      background-position: center;
+      background-position: 30%;
       background-size: cover; }
     body .main-content #highlight2 {
       background-image: url(../img/ren.jpg);
       background-position: center;
       background-size: cover; }
+      @media (min-width: 768px) {
+        body .main-content #highlight2 {
+          background-position: left; } }
     body .main-content #highlight3 {
       background-image: url(../img/bastu.jpeg);
       background-position: center;

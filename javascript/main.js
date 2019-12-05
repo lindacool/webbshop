@@ -70,7 +70,6 @@ $(document).ready(function() {
         
     });
 
-    // ($("#h1").css("color") == "rgb(0, 128, 0)")
     // slut nav
 
 
