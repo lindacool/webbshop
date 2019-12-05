@@ -82,13 +82,16 @@ body {
         flex-wrap: wrap;
         #highlight1 {
         background-image: url(../img/hemmabryggeri.jpeg);
-        background-position: center;
+        background-position: 30%;
         background-size: cover;
         }
         #highlight2 {
             background-image: url(../img/ren.jpg);
             background-position: center;
             background-size: cover;
+            @include tablet {
+                background-position: left;
+            }
         }
         #highlight3 {
             background-image: url(../img/bastu.jpeg);
