@@ -2,6 +2,7 @@
 @import 'footer';
 @import 'header';
 @import 'products';
+@import 'adminpage';
 
 @mixin smallphone {
     @media (max-width: 576px) { @content; }

@@ -1,3 +1,21 @@
-#accordion {
-    margin-left: 10px;
+.navcontainer {
+    height: 42px;
+    border: 1px solid black;
+    position: relative;
+    .js-toggleMenu {
+    position: relative; 
+    z-index: 9; 
+    height: 40px; 
+    width: 40px; 
+    background-color: gray;
+    }
+    .js-menu {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 500px;
+        background-color: white;
+        top: 0;
+        left: 0;
+    }
 }
