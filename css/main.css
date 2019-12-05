@@ -1,7 +1,7 @@
 @import url(../font/firstorder.ttf);
 .navcontainer {
   position: relative; }
-  .navcontainer .deercontainer {
+  .navcontainer .tabletmenu {
     background-image: url(../img/polartablet.jpg);
     background-position: center;
     background-size: cover;
@@ -12,7 +12,7 @@
     height: 50px;
     width: 40px; }
     @media (min-width: 768px) {
-      .navcontainer .deercontainer {
+      .navcontainer .tabletmenu {
         display: block; } }
   .navcontainer .js-toggleMenu {
     background-image: url(../img/polar.jpg);
