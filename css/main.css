@@ -1,7 +1,5 @@
 @import url(../font/firstorder.ttf);
 .navcontainer {
-  height: 42px;
-  border: 1px solid black;
   position: relative; }
   .navcontainer .js-toggleMenu {
     position: relative;
@@ -10,13 +8,55 @@
     width: 40px;
     background-color: gray; }
   .navcontainer .js-menu {
+    width: 50%;
     display: none;
-    position: absolute;
     width: 100%;
-    height: 500px;
     background-color: white;
     top: 0;
-    left: 0; }
+    left: 0;
+    z-index: 8; }
+    .navcontainer .js-menu .js-toggleDrink {
+      font-weight: bold;
+      position: relative; }
+    .navcontainer .js-menu .js-drinkMenu {
+      width: 50%;
+      display: none;
+      width: 100%;
+      height: 120px;
+      background-color: white;
+      top: 0;
+      left: 0;
+      z-index: 8; }
+    .navcontainer .js-menu .js-toggleSnow {
+      font-weight: bold; }
+    .navcontainer .js-menu .js-snowMenu {
+      width: 50%;
+      display: none;
+      width: 100%;
+      background-color: white;
+      top: 0;
+      left: 0;
+      z-index: 8; }
+    .navcontainer .js-menu .js-toggleTobacco {
+      font-weight: bold; }
+    .navcontainer .js-menu .js-tobaccoMenu {
+      width: 50%;
+      display: none;
+      width: 100%;
+      background-color: white;
+      top: 0;
+      left: 0;
+      z-index: 8; }
+    .navcontainer .js-menu .js-toggleGuns {
+      font-weight: bold; }
+    .navcontainer .js-menu .js-gunsMenu {
+      width: 50%;
+      display: none;
+      width: 100%;
+      background-color: white;
+      top: 0;
+      left: 0;
+      z-index: 8; }
 
 .footer-content {
   display: flex;
