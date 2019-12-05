@@ -11,15 +11,14 @@ $colorfooter:rgb(37, 37, 37);
 .footer-content {
     display: flex;
     flex-direction: row; 
-    justify-content: center;
+    justify-content: space-around;
     background-color: rgba(37, 37, 37, 0.2);
-    flex-wrap: wrap;
     padding: 10px;
     font-size: 14px;
    
     .content {
         color: $colorfooter;
-        width: 50%;
+        width: 30%;
         // padding-top: 10px;
         padding: 10px;
 
@@ -30,31 +29,36 @@ $colorfooter:rgb(37, 37, 37);
             
         li{
             padding: 3px;
-            
-        }
-        li a{
-            color: $colorfooter;
-        }
-        a:hover {
-            color:rgb(63, 63, 63);
-          }
-        }
-
-    }
-    .socialmedia {
-        display: flex;
-        justify-content: space-between;
-        text-align: center;
-        width: 40%;
-        @include tablet{
-            width: 20%;
-        }
-        a {
-            color: $colorfooter;
-        }
-        i {
-            font-size: 2em;
-            padding-bottom: 15px;
+            a{
+                color: $colorfooter;
+                i {
+                    margin-right: 5px;
+                }
+                a:hover {
+                    color:rgb(63, 63, 63);
+                  }
+            }
         }
     }
 }
+}
+//     .content {
+//         display: flex;
+//         justify-content: space-between;
+//         // text-align: center;
+//         width: 30%;
+//         @include tablet{
+//             width: 20%;
+//         }
+//         a {
+//             color: $colorfooter;
+//         }
+//         i {
+//             font-size: 2em;
+//             padding-bottom: 15px;
+//         }
+//         span {
+//             margin-left: 10px;
+//         }
+//     }
+// }
