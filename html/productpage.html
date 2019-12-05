@@ -26,7 +26,8 @@
   <script src="https://kit.fontawesome.com/1e28897ab4.js" crossorigin="anonymous"></script>
     <!-- Våra js/css -->
   <link rel="stylesheet" href="../css/main.css">
-  <script type="text/javascript" src="../javascript/main.js"></script>
+  <script type="text/javascript" src="../javascript/nav.js"></script>
+  <script type="text/javascript" src="../javascript/productpage.js"></script>
   <title>KoN: Dryck</title>
 </head>
 
@@ -34,42 +35,39 @@
   <header class="second-header">
     <h1 class="second-logo">kings of norrland</h1>
   </header>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+  <div class="navcontainer">
+      <button class="js-toggleMenu" type="button">B</button>
+      <div class="js-menu">
+        <button class="js-toggleDrink" type="button">Dryck</button><br>
+        <div class="js-drinkMenu">
+          <button id="hb" type="button">HB</button><br>
+          <button id="finsprit" type="button">Finsprit</button><br>
+          <button id="norrlands" type="button">Norrlands</button><br>
+          <button id="kaffe" type="button">Rivigt kaffe</button>
+        </div>
+        <button class="js-toggleSnow" type="button">Snow</button><br>
+        <div class="js-snowMenu">
+          <button id="snokedjor" type="button">Snökedjor</button><br>
+          <button id="extraljus" type="button">Extraljus</button><br>
+          <button id="snoskor" type="button">Snöskor</button><br>
+        </div>
+        <button class="js-toggleTobacco" type="button">Tobak</button><br>
+        <div class="js-tobaccoMenu">
+          <button id="portion" type="button">Portion</button><br>
+          <button id="los" type="button">Lös</button><br>
+          <button id="gordinegen" type="button">Gör ditt eget snus</button><br>
+        </div>
+        <button class="js-toggleGuns" type="button">Jakt</button><br>
+        <div class="js-gunsMenu">
+          <button id="bossa" type="button">Bössor</button><br>
+          <button id="kikarsikte" type="button">Kikarsikten</button><br>
+          <button id="axelrem" type="button">Axelrämmar</button><br>
+          <button id="kniv" type="button">Stora krigsknivar</button><br>
+        </div>
+      </div>
+      <i class="fas fa-shopping-basket"></i>
+      <span class="badge badge-warning">0</span>
     </div>
-  </nav>
 
 <div id="product-wrapper">
 
