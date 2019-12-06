@@ -1,12 +1,4 @@
 $(document).ready(function() {
-    // nav
-    
-
-    // ($("#h1").css("color") == "rgb(0, 128, 0)")
-    // slut nav
-
-
-
 
     function Product(n,p,d,i) {
         this.name = n;
