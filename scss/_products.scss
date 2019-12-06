@@ -23,7 +23,7 @@
 
     }
 .productcontainer {
-    height: 300px;
+    height: 400px;
     width: 90%;
     background-color: white;
     margin-top: 40px;
@@ -39,6 +39,7 @@
     }
     @include desktop {
         width: 22%;
+        height: 350px;
     }
         .productname {
             font-size: large;
@@ -47,7 +48,10 @@
         }
         .productimg {
             width: 50%;
-            height: 100px;
+            height: auto;
+            @include tablet {
+
+            }
         }
         .productprice {
             font-weight: bold;

@@ -178,7 +178,7 @@ body {
       justify-content: space-around;
       flex-wrap: wrap; } }
   #product-wrapper .productcontainer {
-    height: 300px;
+    height: 400px;
     width: 90%;
     background-color: white;
     margin-top: 40px;
@@ -194,14 +194,15 @@ body {
         width: 45%; } }
     @media (min-width: 992px) {
       #product-wrapper .productcontainer {
-        width: 22%; } }
+        width: 22%;
+        height: 350px; } }
     #product-wrapper .productcontainer .productname {
       font-size: large;
       width: 100%;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
     #product-wrapper .productcontainer .productimg {
       width: 50%;
-      height: 100px; }
+      height: auto; }
     #product-wrapper .productcontainer .productprice {
       font-weight: bold; }
     #product-wrapper .productcontainer .productdescription {
