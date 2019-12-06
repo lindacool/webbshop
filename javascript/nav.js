@@ -1,5 +1,6 @@
 $(document).ready(function() {
-$('#prodbtn').on('click', createProduct);
+
+
     $('.js-toggleMenu').on('click', function() {
         $(".js-menu").slideToggle();
         if($(".js-gunsMenu").css('display') == 'block') {

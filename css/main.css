@@ -1,8 +1,11 @@
 @import url(../font/firstorder.ttf);
 .navcontainer {
   position: relative; }
-  .navcontainer .tabletmenu {
-    background-image: url(../img/polartablet.jpg);
+  @media (min-width: 768px) {
+    .navcontainer {
+      border-bottom: 1px solid black; } }
+  .navcontainer .deercontainer {
+    background-image: url(../img/polartablet2.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -12,8 +15,17 @@
     height: 50px;
     width: 40px; }
     @media (min-width: 768px) {
-      .navcontainer .tabletmenu {
-        display: block; } }
+      .navcontainer .deercontainer {
+        display: inline-block; } }
+  .navcontainer .tabletnavcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .navcontainer .tabletnavcontainer .listbuttons {
+      display: none; }
+      @media (min-width: 768px) {
+        .navcontainer .tabletnavcontainer .listbuttons {
+          display: inline-block; } }
   .navcontainer .js-toggleMenu {
     background-image: url(../img/polar.jpg);
     background-position: center;
@@ -36,6 +48,9 @@
     top: 0;
     left: 0;
     z-index: 8; }
+    @media (min-width: 768px) {
+      .navcontainer .js-menu {
+        display: none !important; } }
     .navcontainer .js-menu .js-toggleDrink {
       margin-top: 10px;
       font-weight: bold;
@@ -137,17 +152,30 @@ body {
         body .second-header .second-logo {
           font-size: 4em; } }
 
-.productcontainer {
+@media (min-width: 768px) {
+  #product-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; } }
+
+#product-wrapper .productcontainer {
+  margin-top: 20px;
   border: 1px solid black;
   display: flex;
   padding: 20px;
   flex-direction: column;
   align-items: center; }
-  .productcontainer .productname {
+  @media (min-width: 768px) {
+    #product-wrapper .productcontainer {
+      width: 45%; } }
+  @media (min-width: 992px) {
+    #product-wrapper .productcontainer {
+      width: 22%; } }
+  #product-wrapper .productcontainer .productname {
     font-size: xx-large;
     width: 100%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
-  .productcontainer .productimg {
+  #product-wrapper .productcontainer .productimg {
     width: 50%;
     height: auto; }
 

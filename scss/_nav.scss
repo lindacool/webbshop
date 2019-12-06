@@ -8,8 +8,12 @@
 
 
 .navcontainer {
-    .tabletmenu {
-        background-image: url(../img/polartablet.jpg);
+    @include tablet {
+        border-bottom: 1px solid black;
+        
+    }
+    .deercontainer {
+        background-image: url(../img/polartablet2.jpg);
         background-position: center;
         background-size: cover;
         position: relative;
@@ -19,7 +23,19 @@
         height: 50px;
         width: 40px;
         @include tablet {
-            display: block;
+            display: inline-block;
+        }
+    }
+    .tabletnavcontainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .listbuttons {
+            display: none;
+
+            @include tablet {
+                display: inline-block;
+            }
         }
     }
     position: relative;
@@ -43,11 +59,13 @@
         display: none;
         // position: absolute;
         width: 100%;
-
         background-color: white;
         top: 0;
         left: 0;
         z-index: 8;
+        @include tablet {
+            display: none !important;
+        }
 
         .js-toggleDrink {
             margin-top: 10px;
