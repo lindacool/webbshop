@@ -8,35 +8,52 @@
 
 
 .navcontainer {
+    display: flex;
     @include tablet {
         border-bottom: 1px solid black;
+        flex-direction: row;
         
     }
     .deercontainer {
-        background-image: url(../img/polartablet2.jpg);
-        background-position: center;
-        background-size: cover;
+        width: 10%;
         position: relative;
         left: 10px;
-        top: 10px;
-        display: none;
-        height: 50px;
-        width: 40px;
-        @include tablet {
-            display: inline-block;
+        top: 5px;
+        .deer {
+            background-image: url(../img/polartablet2.jpg);
+            background-position: center;
+            background-size: cover;
+            display: none;
+            height: 50px;
+            width: 40px;
+            @include tablet {
+                display: inline-block;
+            
         }
+    }
     }
     .tabletnavcontainer {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        padding-left: 0;
+        @include tablet {
+            width: 75%;
+        }
         .listbuttons {
+            margin-top: 20px;
             display: none;
 
             @include tablet {
                 display: inline-block;
             }
         }
+    }
+    .basketcontainer {
+        @include tablet {
+            width: 10%;
+        }
+
     }
     position: relative;
     .js-toggleMenu {
@@ -122,12 +139,12 @@
     i {
         position: absolute;
         right: 20px;
-        top: 10px;
+        top: 15px;
         font-size: 1.8em;
     }
     .badge {
         position: absolute;
         right: 12px;
-        top: 7px;
+        top: 10px;
     }
 }

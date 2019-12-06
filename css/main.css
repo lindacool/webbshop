@@ -1,31 +1,43 @@
 @import url(../font/firstorder.ttf);
 .navcontainer {
+  display: flex;
   position: relative; }
   @media (min-width: 768px) {
     .navcontainer {
-      border-bottom: 1px solid black; } }
+      border-bottom: 1px solid black;
+      flex-direction: row; } }
   .navcontainer .deercontainer {
-    background-image: url(../img/polartablet2.jpg);
-    background-position: center;
-    background-size: cover;
+    width: 10%;
     position: relative;
     left: 10px;
-    top: 10px;
-    display: none;
-    height: 50px;
-    width: 40px; }
-    @media (min-width: 768px) {
-      .navcontainer .deercontainer {
-        display: inline-block; } }
+    top: 5px; }
+    .navcontainer .deercontainer .deer {
+      background-image: url(../img/polartablet2.jpg);
+      background-position: center;
+      background-size: cover;
+      display: none;
+      height: 50px;
+      width: 40px; }
+      @media (min-width: 768px) {
+        .navcontainer .deercontainer .deer {
+          display: inline-block; } }
   .navcontainer .tabletnavcontainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-around; }
+    justify-content: space-around;
+    padding-left: 0; }
+    @media (min-width: 768px) {
+      .navcontainer .tabletnavcontainer {
+        width: 75%; } }
     .navcontainer .tabletnavcontainer .listbuttons {
+      margin-top: 20px;
       display: none; }
       @media (min-width: 768px) {
         .navcontainer .tabletnavcontainer .listbuttons {
           display: inline-block; } }
+  @media (min-width: 768px) {
+    .navcontainer .basketcontainer {
+      width: 10%; } }
   .navcontainer .js-toggleMenu {
     background-image: url(../img/polar.jpg);
     background-position: center;
@@ -97,12 +109,12 @@
   .navcontainer i {
     position: absolute;
     right: 20px;
-    top: 10px;
+    top: 15px;
     font-size: 1.8em; }
   .navcontainer .badge {
     position: absolute;
     right: 12px;
-    top: 7px; }
+    top: 10px; }
 
 .footer-content {
   display: flex;
@@ -152,32 +164,48 @@ body {
         body .second-header .second-logo {
           font-size: 4em; } }
 
-@media (min-width: 768px) {
-  #product-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around; } }
-
-#product-wrapper .productcontainer {
-  margin-top: 20px;
-  border: 1px solid black;
+#product-wrapper {
+  background-image: url(../img/wood2.jpg);
+  background-position: center;
+  background-size: cover;
   display: flex;
-  padding: 20px;
+  margin-top: 20px;
   flex-direction: column;
   align-items: center; }
   @media (min-width: 768px) {
-    #product-wrapper .productcontainer {
-      width: 45%; } }
-  @media (min-width: 992px) {
-    #product-wrapper .productcontainer {
-      width: 22%; } }
-  #product-wrapper .productcontainer .productname {
-    font-size: xx-large;
-    width: 100%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
-  #product-wrapper .productcontainer .productimg {
-    width: 50%;
-    height: auto; }
+    #product-wrapper {
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap; } }
+  #product-wrapper .productcontainer {
+    height: 300px;
+    width: 90%;
+    background-color: white;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px; }
+    @media (min-width: 768px) {
+      #product-wrapper .productcontainer {
+        width: 45%; } }
+    @media (min-width: 992px) {
+      #product-wrapper .productcontainer {
+        width: 22%; } }
+    #product-wrapper .productcontainer .productname {
+      font-size: large;
+      width: 100%;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+    #product-wrapper .productcontainer .productimg {
+      width: 50%;
+      height: 100px; }
+    #product-wrapper .productcontainer .productprice {
+      font-weight: bold; }
+    #product-wrapper .productcontainer .productdescription {
+      text-align: 0; }
 
 body .inputcontainer {
   margin: 20px;

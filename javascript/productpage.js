@@ -1,6 +1,4 @@
 $(document).ready(function() {
-<<<<<<< HEAD
-=======
     // nav
     
     $('#prodbtn').on('click', createProduct);   
@@ -10,7 +8,6 @@ $(document).ready(function() {
 
 
 
->>>>>>> 953161c05bbf69bbde29575678cab4dac702f505
 
     function Product(n,p,d,i) {
         this.name = n;
@@ -24,9 +21,9 @@ $(document).ready(function() {
     let ettan = new Product('Ettan',43,'Ett gott snus','../img/ettan.jpg');
     let snokedja = new Product('Snökedja',1000,'Kör fö fa-an','../img/snokedja.jpg')
     let norrlands = new Product('Norrlands Guld',200,'Vid köp av tio flak, får du ett "Göre själv" snus-paket!','../img/norrlands.png')
-    let kahru = new Product('Kahru',10,'Björnen','../img/')
+    let karhu = new Product('Kahru',10,'Björn-öl','../img/karhu.jpg')
 
-    let drinkingProducts = [hb, norrlands, explorer];
+    let drinkingProducts = [norrlands, karhu, explorer, hb];
     let tobaccoProducts = [egetsnus, ettan];
     let winterProducts = [snokedja];
 
@@ -34,7 +31,7 @@ $(document).ready(function() {
 
     $(drinkingProducts).each(function(i){
         let newDiv = $('<div>').addClass('productcontainer');
-        let productName = $('<p>').html(drinkingProducts[i].name);
+        let productName = $('<span>').html(drinkingProducts[i].name);
         productName.addClass('productname');
         newDiv.append(productName);
         let productImg = $('<img>');
@@ -44,7 +41,7 @@ $(document).ready(function() {
         let productPrice = $('<span>').html(`${drinkingProducts[i].price} kr`);
         productPrice.addClass('productprice');
         newDiv.append(productPrice);
-        let productDescription = $('<p>').html(drinkingProducts[i].description);
+        let productDescription = $('<span>').html(drinkingProducts[i].description);
         productDescription.addClass('productdescription');
         newDiv.append(productDescription);
         console.log(newDiv);
