@@ -27,7 +27,7 @@ $(document).ready(function() {
     let tobaccoProducts = [egetsnus, ettan];
     let winterProducts = [snokedja];
 
- 
+    let cart = [];
 
     $(drinkingProducts).each(function(i){
         let newDiv = $('<div>').addClass('productcontainer');
@@ -43,13 +43,25 @@ $(document).ready(function() {
         newDiv.append(productPrice);
         let productDescription = $('<span>').html(drinkingProducts[i].description);
         productDescription.addClass('productdescription');
+        let newButton = $('<button>').addClass('productbutton');
+        newButton.attr("type", "button");
+        newButton.text('NorrBalle');
         newDiv.append(productDescription);
-        console.log(newDiv);
-        $('#product-wrapper').append(newDiv);
-        console.log(drinkingProducts[i].img);
-        
+        newDiv.append(newButton);
+        //console.log(newDiv);
+        $('#product-wrapper').append(newDiv);  
+        newButton.on("click", function(){
+            cart.push(drinkingProducts[i]);
+            $('#cart-items').html(cart.length);
+            putInStorage();
+        });    
         
     });
+
+    function putInStorage() {
+        localStorage.setItem('cart', cart);
+    }
+
     function createProduct() {
         let prodName = $('#prodname').val();
         let prodPrice = parseInt($('#prodprice').val());
@@ -57,9 +69,7 @@ $(document).ready(function() {
         let imgUrl = '../img/'+$('#imgurl').val();
         let newProduct = new Product(prodName,prodPrice,ProdDescr,imgUrl)
 
-        products.push(newProduct);
-        
-        console.log(products);
+        products.push(newProduct);        
     }
     
 })
