@@ -1,6 +1,7 @@
 $(document).ready(function() {
     // nav
     
+    $('#prodbtn').on('click', createProduct);   
 
     // ($("#h1").css("color") == "rgb(0, 128, 0)")
     // slut nav
@@ -20,7 +21,7 @@ $(document).ready(function() {
     let ettan = new Product('Ettan',43,'Ett gott snus','../img/ettan.jpg');
     let snokedja = new Product('Snökedja',1000,'Kör fö fa-an','../img/snokedja.jpg')
     let norrlands = new Product('Norrlands Guld',200,'Vid köp av tio flak, får du ett "Göre själv" snus-paket!','../img/norrlands.png')
-    
+    let kahru = new Product('Kahru',10,'Björnen','../img/')
 
     let drinkingProducts = [hb, norrlands, explorer];
     let tobaccoProducts = [egetsnus, ettan];
