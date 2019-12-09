@@ -1,16 +1,20 @@
 @import url(../font/firstorder.ttf);
 .navcontainer {
-  display: flex;
   position: relative; }
   @media (min-width: 768px) {
     .navcontainer {
       border-bottom: 1px solid black;
-      flex-direction: row; } }
+      flex-direction: row;
+      justify-content: space-between; } }
   .navcontainer .deercontainer {
+    display: none;
     width: 10%;
     position: relative;
     left: 10px;
     top: 5px; }
+    @media (min-width: 768px) {
+      .navcontainer .deercontainer {
+        display: inline-block; } }
     .navcontainer .deercontainer .deer {
       background-image: url(../img/polartablet2.jpg);
       background-position: center;
@@ -28,13 +32,16 @@
     padding-left: 0; }
     @media (min-width: 768px) {
       .navcontainer .tabletnavcontainer {
-        width: 75%; } }
+        width: 75%;
+        display: inline-block;
+        text-align: center; } }
     .navcontainer .tabletnavcontainer .listbuttons {
       margin-top: 20px;
       display: none; }
       @media (min-width: 768px) {
         .navcontainer .tabletnavcontainer .listbuttons {
-          display: inline-block; } }
+          display: inline-block;
+          margin: 0 5px; } }
   @media (min-width: 768px) {
     .navcontainer .basketcontainer {
       width: 10%; } }
@@ -53,7 +60,6 @@
       .navcontainer .js-toggleMenu {
         display: none; } }
   .navcontainer .js-menu {
-    width: 50%;
     display: none;
     width: 100%;
     background-color: white;
@@ -178,6 +184,7 @@ body {
       justify-content: space-around;
       flex-wrap: wrap; } }
   #product-wrapper .productcontainer {
+    border: 1px solid #8d999948;
     height: 400px;
     width: 90%;
     background-color: white;
@@ -202,12 +209,13 @@ body {
       width: 100%;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
     #product-wrapper .productcontainer .productimg {
-      width: 50%;
+      width: 300px;
       height: auto; }
+      @media (min-width: 768px) {
+        #product-wrapper .productcontainer .productimg {
+          width: 50%; } }
     #product-wrapper .productcontainer .productprice {
       font-weight: bold; }
-    #product-wrapper .productcontainer .productdescription {
-      text-align: 0; }
 
 body .inputcontainer {
   margin: 20px;
