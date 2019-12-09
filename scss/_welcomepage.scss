@@ -1,5 +1,13 @@
-body {
-    background-image: url('../img/startimg.jpg');
+@mixin tablet {
+    @media (min-width: 768px) { @content; }
+}
+
+@mixin desktop {
+    @media (min-width: 992px) { @content; }
+}
+
+.welcomebody {
+    background-image: url('../img/startimg2.jpg');
     background-color: #cccccc;
     height: 800px;
     background-position: left;
@@ -7,7 +15,11 @@ body {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    color: white;
+    align-items: center;
+    @include tablet {
+        background-position: center;
+    }
+
     h1 {
         text-align: center;
         margin-top: 100px;
@@ -15,29 +27,48 @@ body {
     p {
         text-align: center;
         margin-top: 200px;
-        font-weight: bold; 
-    }
-    #ageinput {
-        width: 20%;
-        margin: 10px auto;
-        border: 1px solid white;
+        font-weight: bold;
+        color: white;
         background-color: gray;
+        opacity: 0.5;
+        width: 80%;
+        max-width: 600px;
         border-radius: 5px;
     }
-}
-@media screen and (min-width: 768px) {
-    body {
-        background-position: center;
-        #ageinput {
-            width: 11%;
+    .age-form {
+        background-color: gray;
+        opacity: 0.5;
+        display: flex;
+        justify-content: space-around;
+        width: 175px;
+        border-radius: 5px;
+        .inputcontainer {
+            margin: 0;
+            #year {
+                width: 100%;
+            }
+            input {
+                opacity: 1;
+                width: 70%;
+                text-align: center;
+                margin: 10px auto;
+                border: 1px solid white;
+                background-color: gray;
+                border-radius: 5px;
+                max-width: 60px;
+            }
+            label {
+                opacity: 1;
+                color: white;
+                text-align: center;
+            }
         }
+
+
     }
-}
-@media screen and (min-width: 992px) {
-    body {
-        background-position: center;
-        #ageinput {
-            width: 5%;
-        }
+    #agebutton {
+        border: 1px solid black;
+        background-color: darkslategray;
+        border-radius: 5px;
     }
 }
