@@ -15,15 +15,14 @@
     flex-direction: column;
     align-items: center;
     @include tablet {
-        
-        
         flex-direction: row;
         justify-content: space-around;
         flex-wrap: wrap;
 
     }
 .productcontainer {
-    height: 300px;
+    border: 1px solid #8d999948;
+    height: 400px;
     width: 90%;
     background-color: white;
     margin-top: 40px;
@@ -40,6 +39,7 @@
     }
     @include desktop {
         width: 22%;
+        height: 350px;
     }
         .productname {
             font-size: large;
@@ -47,15 +47,17 @@
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         .productimg {
-            width: 50%;
-            height: 100px;
+            width: 300px;
+            height: auto;
+            @include tablet {
+                width: 50%;
+            }
         }
         .productprice {
             font-weight: bold;
         }
         .productdescription {
-            text-align: floor($number: 0)
-            
+
         }
     }
 }
