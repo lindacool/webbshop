@@ -25,17 +25,12 @@
     <!-- Våra js/css -->
   <link type="text/css" rel="stylesheet" href="css/main.css">
   <script type="text/javascript" src="javascript/main.js"></script>
+  <script type="text/javascript" src="javascript/nav.js"></script>
   <title>KoN</title>
-
-
-
-
-
-
 
 </head>
 
-<body>
+<body class="mainbody">
   
   <header>
     <h1>kings of norrland</h1>
@@ -48,10 +43,12 @@
     </div>
     
     <ul class="tabletnavcontainer">
-      <li class="listbuttons">Dricka</li>
-      <li class="listbuttons">Vintertillbehör</li>
-      <li class="listbuttons">Tobak</li>
-      <li class="listbuttons">Jakt</li>  
+      <div class="listcontainer">
+        <li><button class="listbuttons" type="button">Dricka</button></li>
+        <li><button class="listbuttons" type="button">Vintertillbehör</button></li>
+        <li><button class="listbuttons" type="button">Tobak</button></li>
+        <li><button class="listbuttons" type="button">Jakt</button></li>
+      </div>
     </ul>
     <div class="basketcontainer">
       <i class="fas fa-shopping-basket"></i>
@@ -87,7 +84,34 @@
       </div>
     </div>
   </div>
-
+  <div class="tabletdropdowncontainer">
+    <div class="tabletdropdown">
+        <div class="tabletprodutcs" id="tabletdrinks">
+          <button class="tabletdropbutton">HB</button>
+          <button class="tabletdropbutton">Norrlands</button>
+          <button class="tabletdropbutton">Finsprit</button>
+          <button class="tabletdropbutton">Rivigt kaffe</button>
+        </div>
+        <div class="tabletprodutcs" id="tabletsnow">
+            <button class="tabletdropbutton">Snökedjor</button>
+            <button class="tabletdropbutton">Extraljus</button>
+            <button class="tabletdropbutton">Snöskor</button>
+            <button class="tabletdropbutton">Snö4</button>
+        </div>
+        <div class="tabletprodutcs" id="tablettobacco">
+            <button class="tabletdropbutton">Portion</button>
+            <button class="tabletdropbutton">Lös</button>
+            <button class="tabletdropbutton">Gör ditt eget</button>
+            <button class="tabletdropbutton">Tobak4</button>
+        </div>
+        <div class="tabletprodutcs" id="tabletguns">
+            <button class="tabletdropbutton">Bössor</button>
+            <button class="tabletdropbutton">Kikarsikten</button>
+            <button class="tabletdropbutton">Axelrämmar</button>
+            <button class="tabletdropbutton">Stora krigsknivar</button>
+        </div>
+    </div>
+  </div>
   <div id="carouselExampleSlidesOnly" class=" mt-3 mb-3 carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">

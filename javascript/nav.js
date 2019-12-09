@@ -1,5 +1,8 @@
 $(document).ready(function() {
-
+    $('.listbuttons').on('click', function() {
+        $(".tabletdropdowncontainer").slideToggle();
+        console.log('hej');
+    })
 
     $('.js-toggleMenu').on('click', function() {
         $(".js-menu").slideToggle();

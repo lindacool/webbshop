@@ -1,27 +1,58 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+    <!--Jquery & UI -->
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <!-- Bootstrap -->
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/1e28897ab4.js" crossorigin="anonymous"></script>
-    <title>Välkommen</title>
-    <link type="text/css" rel="stylesheet" href="../css/welcomepage.css">
+    </script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/1e28897ab4.js" crossorigin="anonymous"></script>
+    <!-- Våra js/css -->
+  <link type="text/css" rel="stylesheet" href="../css/main.css">
+  <script type="text/javascript" src="../javascript/welcome.js"></script>
+  <title>KoN</title>
+
 </head>
-<body>
+<body class="welcomebody">
     <h1>Väkommen</h1>
     <p>
-        Du behöver vara 15 år eller äldre för att ta del av våra erbjudanden.
+        Du behöver vara <b>15 år</b> eller äldre för att ta del av våra erbjudanden.<br>
+        Skriv in din ålder nedan.
     </p>
-    <input id="ageinput" type="number" /><button type="button">Go!</button>
-</div>
+
+    <div class="age-form">
+      <div class="inputcontainer">
+          <input name="year" id="year" type="number" />
+          <label for="year">yyyy</label>
+      </div>
+      <div class="inputcontainer">
+          <input name="month" id="month" type="number" />
+          <label for="month">mm</label>
+      </div>
+      <div class="inputcontainer">
+          <input name="day" id="day" type="number" />
+          <label for="day">dd</label>
+      </div>
+
+
+
+    </div>
+    <button id="agebutton" type="button">Go!</button>
+
 
 </body>
