@@ -21,13 +21,14 @@ $(document).ready(function() {
     let ettan = new Product('Ettan',43,'Ett gott snus','../img/ettan.jpg');
     let snokedja = new Product('Snökedja',1000,'Kör fö fa-an','../img/snokedja.jpg')
     let norrlands = new Product('Norrlands Guld',200,'Vid köp av tio flak, får du ett "Göre själv" snus-paket!','../img/norrlands.png')
-    let karhu = new Product('Kahru',10,'Björn-öl','../img/karhu.jpg')
+    let karhu = new Product('Karhu',10,'Björn-öl','../img/karhu.jpg')
 
     let drinkingProducts = [norrlands, karhu, explorer, hb];
     let tobaccoProducts = [egetsnus, ettan];
     let winterProducts = [snokedja];
 
     let cart = [];
+    let storage = [];
 
     $(drinkingProducts).each(function(i){
         let newDiv = $('<div>').addClass('productcontainer');
@@ -37,29 +38,34 @@ $(document).ready(function() {
         let productImg = $('<img>');
         productImg.attr('src', drinkingProducts[i].img);
         productImg.addClass('productimg');
+        productImg.on("click", function(){
+            storage.push(drinkingProducts[i]);
+            putInStorage();
+            location.href = 'specificproduct.html';
+        });
         newDiv.append(productImg);
         let productPrice = $('<span>').html(`${drinkingProducts[i].price} kr`);
         productPrice.addClass('productprice');
         newDiv.append(productPrice);
         let productDescription = $('<span>').html(drinkingProducts[i].description);
         productDescription.addClass('productdescription');
-        let newButton = $('<button>').addClass('productbutton');
-        newButton.attr("type", "button");
-        newButton.text('NorrBalle');
+        let newButton = $('<i>').addClass('fas fa-plus');
         newDiv.append(productDescription);
         newDiv.append(newButton);
-        //console.log(newDiv);
         $('#product-wrapper').append(newDiv);  
         newButton.on("click", function(){
             cart.push(drinkingProducts[i]);
             $('#cart-items').html(cart.length);
             putInStorage();
+            console.log(localStorage.getItem('cart'));
         });    
-        
+     
     });
 
     function putInStorage() {
-        localStorage.setItem('cart', cart);
+        let stringStorage = JSON.stringify(storage);
+        localStorage.clear('product');
+        localStorage.setItem('product', stringStorage);
     }
 
     function createProduct() {

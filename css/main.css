@@ -210,7 +210,7 @@ body {
       flex-wrap: wrap; } }
   #product-wrapper .productcontainer {
     border: 1px solid #8d999948;
-    height: 400px;
+    height: 500px;
     width: 90%;
     background-color: white;
     margin-top: 40px;
@@ -241,6 +241,10 @@ body {
           width: 50%; } }
     #product-wrapper .productcontainer .productprice {
       font-weight: bold; }
+    #product-wrapper .productcontainer i {
+      cursor: pointer;
+      font-size: 48px;
+      margin-top: 20px; }
 
 body .inputcontainer {
   margin: 20px;
