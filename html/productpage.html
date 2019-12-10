@@ -38,7 +38,23 @@
     <h1 class="second-logo">kings of norrland</h1>
   </header>
   <div class="navcontainer">
-    <button class="js-toggleMenu" type="button">B</button>
+    <div class="deercontainer">
+        <div class="deer"></div>
+    </div>
+    
+    <ul class="tabletnavcontainer">
+      <div class="listcontainer">
+        <li><button class="listbuttons" type="button"><b>Dricka</b></button></li>
+        <li><button class="listbuttons" type="button"><b>Vintertillbehör</b></button></li>
+        <li><button class="listbuttons" type="button"><b>Tobak</b></button></li>
+        <li><button class="listbuttons" type="button"><b>Jakt</b></button></li>
+      </div>
+    </ul>
+    <div class="basketcontainer">
+      <i class="fas fa-shopping-basket"></i>
+      <span class="badge badge-warning">0</span>
+    </div>
+    <button class="js-toggleMenu" type="button"></button>
     <div class="js-menu">
       <button class="js-toggleDrink" type="button">Dryck</button><br>
       <div class="js-drinkMenu">
@@ -47,7 +63,7 @@
         <button id="norrlands" type="button">Norrlands</button><br>
         <button id="kaffe" type="button">Rivigt kaffe</button>
       </div>
-      <button class="js-toggleSnow" type="button">Snow</button><br>
+      <button class="js-toggleSnow" type="button">Snötillbehör</button><br>
       <div class="js-snowMenu">
         <button id="snokedjor" type="button">Snökedjor</button><br>
         <button id="extraljus" type="button">Extraljus</button><br>
@@ -67,10 +83,34 @@
         <button id="kniv" type="button">Stora krigsknivar</button><br>
       </div>
     </div>
-    <i class="fas fa-shopping-basket" id="basket"></i>
-    <span class="badge badge-warning" id="cart-items">0</span>
   </div>
-
+  <div class="tabletdropdowncontainer">
+    <div class="tabletdropdown">
+        <div class="tabletprodutcs" id="tabletdrinks">
+          <button class="tabletdropbutton">HB</button>
+          <button class="tabletdropbutton">Norrlands</button>
+          <button class="tabletdropbutton">Finsprit</button>
+          <button class="tabletdropbutton">Rivigt kaffe</button>
+        </div>
+        <div class="tabletprodutcs" id="tabletsnow">
+            <button class="tabletdropbutton">Snökedjor</button>
+            <button class="tabletdropbutton">Extraljus</button>
+            <button class="tabletdropbutton">Snöskor</button>
+            <button class="tabletdropbutton">Snö4</button>
+        </div>
+        <div class="tabletprodutcs" id="tablettobacco">
+            <button class="tabletdropbutton">Portion</button>
+            <button class="tabletdropbutton">Lös</button>
+            <button class="tabletdropbutton">Gör ditt eget</button>
+            <button class="tabletdropbutton">Tobak4</button>
+        </div>
+        <div class="tabletprodutcs" id="tabletguns">
+            <button class="tabletdropbutton">Bössor</button>
+            <button class="tabletdropbutton">Kikarsikten</button>
+            <button class="tabletdropbutton">Axelrämmar</button>
+            <button class="tabletdropbutton">Stora krigsknivar</button>
+        </div>
+    </div>
   <div id="product-wrapper">
   </div>
 
