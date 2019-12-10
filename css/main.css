@@ -1,5 +1,8 @@
 @import url(../font/firstorder.ttf);
 .navcontainer {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: large;
   z-index: 999;
   background-color: white;
   position: sticky !important;
@@ -16,6 +19,7 @@
     width: 10%; }
     @media (min-width: 768px) {
       .navcontainer .deercontainer {
+        margin-top: 10px;
         display: inline-block; } }
     .navcontainer .deercontainer .deer {
       background-image: url(../img/polartablet2.jpg);
@@ -100,11 +104,13 @@
       width: 50%;
       display: none;
       width: 100%;
-      height: 120px;
       background-color: white;
       top: 0;
       left: 0;
       z-index: 8; }
+      .navcontainer .js-menu .js-drinkMenu .mobilebtn {
+        border: none;
+        background-color: white; }
     .navcontainer .js-menu .js-toggleSnow {
       font-weight: bold;
       border: none;
@@ -117,6 +123,9 @@
       top: 0;
       left: 0;
       z-index: 8; }
+      .navcontainer .js-menu .js-snowMenu .mobilebtn {
+        border: none;
+        background-color: white; }
     .navcontainer .js-menu .js-toggleTobacco {
       font-weight: bold;
       border: none;
@@ -129,6 +138,9 @@
       top: 0;
       left: 0;
       z-index: 8; }
+      .navcontainer .js-menu .js-tobaccoMenu .mobilebtn {
+        border: none;
+        background-color: white; }
     .navcontainer .js-menu .js-toggleGuns {
       font-weight: bold;
       border: none;
@@ -141,21 +153,32 @@
       top: 0;
       left: 0;
       z-index: 8; }
+      .navcontainer .js-menu .js-gunsMenu .mobilebtn {
+        border: none;
+        background-color: white; }
 
 .tabletdropdowncontainer {
-  z-index: 8;
-  background-color: white;
-  position: sticky !important;
-  top: 70px;
-  display: none;
-  margin: 10px auto;
-  width: 85%; }
+  display: none; }
+  @media (min-width: 768px) {
+    .tabletdropdowncontainer {
+      border-radius: 5px;
+      padding: 20px;
+      z-index: 8;
+      background-color: white;
+      position: sticky !important;
+      top: 70px;
+      margin: 10px auto;
+      width: 85%;
+      box-shadow: 0px 5px 7px -3px #8a868a; } }
   .tabletdropdowncontainer .tabletdropdown {
-    margin-left: 65px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: white; }
+    display: none; }
+    @media (min-width: 768px) {
+      .tabletdropdowncontainer .tabletdropdown {
+        margin-left: 65px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white; } }
     .tabletdropdowncontainer .tabletdropdown .tabletprodutcs {
       width: 24%;
       display: flex;
@@ -220,7 +243,6 @@ body {
   background-position: center;
   background-size: cover;
   display: flex;
-  margin-top: 20px;
   flex-direction: column;
   align-items: center; }
   @media (min-width: 768px) {
@@ -378,28 +400,28 @@ body .inputcontainer {
   #divmodal.active .innerModal.active {
     visibility: visible; }
 
-.mainbody {
+.mainbody, .productbody {
   background-color: white;
   padding: 0;
   display: flex;
   flex-direction: column;
   flex: wrap; }
-  .mainbody header {
+  .mainbody header, .productbody header {
     width: 100%;
     height: 650px;
     background-image: url(../img/header.jpg);
     background-position: center;
     background-size: cover;
     text-align: center; }
-    .mainbody header .thingy {
+    .mainbody header .thingy, .productbody header .thingy {
       position: absolute;
-      bottom: 84px;
+      bottom: 50px;
       width: 100%;
       height: 50px;
       background-color: white;
       background-size: cover;
       clip-path: polygon(0% 100%, 100% 100%, 0% 0%); }
-    .mainbody header h1 {
+    .mainbody header h1, .productbody header h1 {
       margin-top: 250px;
       margin-bottom: 0px;
       font-size: 4em;
@@ -409,9 +431,9 @@ body .inputcontainer {
       font-family: "firstorder";
       text-transform: uppercase; }
       @media (min-width: 768px) {
-        .mainbody header h1 {
+        .mainbody header h1, .productbody header h1 {
           font-size: 5em; } }
-    .mainbody header h3 {
+    .mainbody header h3, .productbody header h3 {
       margin-top: 0px;
       font-size: 2em;
       color: white;
@@ -419,19 +441,19 @@ body .inputcontainer {
       font-weight: 900;
       font-family: "firstorder"; }
       @media (min-width: 768px) {
-        .mainbody header h3 {
+        .mainbody header h3, .productbody header h3 {
           font-size: 3em; } }
-  .mainbody .wrapper {
+  .mainbody .wrapper, .productbody .wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
     padding-top: 15px;
     padding-bottom: 35px; }
-    .mainbody .wrapper #about-us {
+    .mainbody .wrapper #about-us, .productbody .wrapper #about-us {
       width: 90%; }
-    .mainbody .wrapper span {
+    .mainbody .wrapper span, .productbody .wrapper span {
       line-height: 15px; }
-  .mainbody .main-content {
+  .mainbody .main-content, .productbody .main-content {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -439,48 +461,48 @@ body .inputcontainer {
     background-color: white;
     padding-bottom: 15px;
     flex-wrap: wrap; }
-    .mainbody .main-content #highlight1 {
+    .mainbody .main-content #highlight1, .productbody .main-content #highlight1 {
       background-image: url(../img/hemmabryggeri.jpeg);
       background-position: 30%;
       background-size: cover; }
-    .mainbody .main-content #highlight2 {
+    .mainbody .main-content #highlight2, .productbody .main-content #highlight2 {
       background-image: url(../img/ren.jpg);
       background-position: center;
       background-size: cover; }
       @media (min-width: 768px) {
-        .mainbody .main-content #highlight2 {
+        .mainbody .main-content #highlight2, .productbody .main-content #highlight2 {
           background-position: left; } }
-    .mainbody .main-content #highlight3 {
+    .mainbody .main-content #highlight3, .productbody .main-content #highlight3 {
       background-image: url(../img/bastu.jpeg);
       background-position: center;
       background-size: cover; }
-    .mainbody .main-content .content {
+    .mainbody .main-content .content, .productbody .main-content .content {
       width: 90%;
       height: 300px;
       border-radius: 5px;
       margin-bottom: 10px;
       position: relative; }
       @media (min-width: 768px) {
-        .mainbody .main-content .content {
+        .mainbody .main-content .content, .productbody .main-content .content {
           width: 30%; } }
-      .mainbody .main-content .content div {
+      .mainbody .main-content .content div, .productbody .main-content .content div {
         position: absolute;
         bottom: 10px;
         left: 10px; }
-        .mainbody .main-content .content div h3 {
+        .mainbody .main-content .content div h3, .productbody .main-content .content div h3 {
           color: white;
           font-size: 45px;
           text-shadow: 0px 0px 5px black; }
           @media (min-width: 768px) {
-            .mainbody .main-content .content div h3 {
+            .mainbody .main-content .content div h3, .productbody .main-content .content div h3 {
               font-size: 30px; } }
-        .mainbody .main-content .content div span {
+        .mainbody .main-content .content div span, .productbody .main-content .content div span {
           color: white;
           font-size: 15px;
           text-shadow: 0px 0px 5px black;
           margin-left: 2px;
           font-weight: 700; }
-  .mainbody footer {
+  .mainbody footer, .productbody footer {
     display: flex;
     flex-direction: row;
     width: 100%;
