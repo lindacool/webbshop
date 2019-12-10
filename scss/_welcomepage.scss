@@ -7,7 +7,7 @@
 }
 
 .welcomebody {
-    background-image: url('../img/startimg2.jpg');
+    background-image: url('../img/bakgrund2.jpg');
     background-color: #cccccc;
     height: 800px;
     background-position: left;
@@ -19,25 +19,37 @@
     @include tablet {
         background-position: center;
     }
+    .welcome-wrapper {
+        background-color: rgba($color: #000000, $alpha: 0.2);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+        padding: 20px;
+        width: 80%;
+        @include tablet {
+            width: 50%;
+        }
+    }
 
     h1 {
         text-align: center;
-        margin-top: 100px;
+        margin: 100px 0;
     }
     p {
         text-align: center;
-        margin-top: 200px;
         font-weight: bold;
         color: white;
         background-color: gray;
-        opacity: 0.5;
         width: 80%;
         max-width: 600px;
         border-radius: 5px;
     }
     .age-form {
         background-color: gray;
-        opacity: 0.5;
+        padding: 10px;
+        margin-bottom: 20px;
         display: flex;
         justify-content: space-around;
         width: 175px;
@@ -48,7 +60,7 @@
                 width: 100%;
             }
             input {
-                opacity: 1;
+
                 width: 70%;
                 text-align: center;
                 margin: 10px auto;
@@ -58,7 +70,7 @@
                 max-width: 60px;
             }
             label {
-                opacity: 1;
+
                 color: white;
                 text-align: center;
             }
@@ -68,7 +80,7 @@
     }
     #agebutton {
         border: 1px solid black;
-        background-color: darkslategray;
+        background-color: whitesmoke;
         border-radius: 5px;
     }
 }

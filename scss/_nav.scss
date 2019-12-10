@@ -8,19 +8,23 @@
 
 
 .navcontainer {
+    z-index: 999;
+    background-color: white;
+    position: sticky !important;
+    top: 0;
+    border-bottom: 1px solid black;
     @include tablet {
         border-bottom: 1px solid black;
         flex-direction: row;
         justify-content: space-between;
 
+
         
     }
     .deercontainer {
+        padding-left: 10px;
         display: none;
         width: 10%;
-        position: relative;
-        left: 10px;
-        top: 5px;
         @include tablet {
             display: inline-block;
         }
@@ -38,12 +42,6 @@
     }
     }
     .tabletnavcontainer {
-        .listcontainer {
-                @include tablet {
-                    display: flex;
-                    justify-content: space-around;
-                }
-        }
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -53,6 +51,13 @@
             display: inline-block;
             text-align: center;
         }
+        .listcontainer {
+                @include tablet {
+                    display: flex;
+                    justify-content: space-around;
+                }
+        }
+
         li {
             list-style: none;
         .listbuttons {
@@ -71,6 +76,19 @@
     .basketcontainer {
         @include tablet {
             width: 10%;
+            display: inline-block;
+
+        }
+        i {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 1.8em;
+        }
+        .badge {
+            position: absolute;
+            right: 12px;
+            top: 15px;
         }
 
     }
@@ -87,6 +105,7 @@
     width: 40px; 
     border: none;
     background-color: white;
+
     @include tablet {
         display: none;
     }
@@ -163,17 +182,7 @@
             z-index: 8;
         }  
     }
-    i {
-        // position: absolute;
-        // right: 20px;
-        // top: 15px;
-        font-size: 1.8em;
-    }
-    .badge {
-        position: absolute;
-        right: 12px;
-        top: 10px;
-    }
+
 }
 .tabletdropdowncontainer {
     display: none;
