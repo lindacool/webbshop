@@ -4,6 +4,7 @@
 @import 'products';
 @import 'adminpage';
 @import 'welcomepage';
+@import 'modal';
 
 @mixin smallphone {
     @media (max-width: 576px) { @content; }

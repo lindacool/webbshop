@@ -76,6 +76,7 @@ $(document).ready(function() {
             putInStorage();
         });
     });
+    
 
     function putInStorage() {
         let stringStorage = JSON.stringify(storage);
