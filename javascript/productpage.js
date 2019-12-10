@@ -32,11 +32,6 @@ $(document).ready(function() {
 
     let amountCount = [];
 
-    let babo = localStorage.getItem('stringCart');
-    let boba = JSON.parse(babo);
-    $('#cart-items').text(boba.length);
-    console.log(boba);
-
     $(drinkingProducts).each(function(i){
         console.log(i);
         let newDiv = $('<div>').addClass('productcontainer');
@@ -69,6 +64,7 @@ $(document).ready(function() {
             let babo = localStorage.getItem('stringCart');
             let boba = JSON.parse(babo);
             $('#cart-items').text(boba.length);
+            console.log(amountCount);
         });
         let deleteButton = $('<button>');
         newDiv.append(deleteButton);
