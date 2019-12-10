@@ -2,7 +2,6 @@ $(document).ready(function() {
 
     let moreInfo = localStorage.getItem('product');
     let productInfo = JSON.parse(moreInfo);
-    console.log(productInfo);
 
     $("#title").text("KoN:" + " " + productInfo[0].name);
     $(".product-img").append([
@@ -17,4 +16,10 @@ $(document).ready(function() {
     $(".product-price").append([
         $("<h3>").text(productInfo[0].price)
     ]);
+
+    let babo = localStorage.getItem('stringCart');
+    let boba = JSON.parse(babo);
+    $('#cart-items').text(boba.length);
+    console.log(boba);
+
 });

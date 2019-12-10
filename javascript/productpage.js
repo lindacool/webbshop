@@ -30,7 +30,15 @@ $(document).ready(function() {
     let cart = [];
     let storage = [];
 
+    let amountCount = [];
+
+    let babo = localStorage.getItem('stringCart');
+    let boba = JSON.parse(babo);
+    $('#cart-items').text(boba.length);
+    console.log(boba);
+
     $(drinkingProducts).each(function(i){
+        console.log(i);
         let newDiv = $('<div>').addClass('productcontainer');
         let productName = $('<span>').html(drinkingProducts[i].name);
         productName.addClass('productname');
@@ -53,19 +61,32 @@ $(document).ready(function() {
         newDiv.append(productDescription);
         newDiv.append(newButton);
         $('#product-wrapper').append(newDiv);  
-        newButton.on("click", function(){
+        amountCount[drinkingProducts[i].name] = 0;
+        newButton.on('click', function(){
+            amountCount[drinkingProducts[i].name] += 1;
             cart.push(drinkingProducts[i]);
-            $('#cart-items').html(cart.length);
             putInStorage();
-            console.log(localStorage.getItem('cart'));
-        });    
-     
+            let babo = localStorage.getItem('stringCart');
+            let boba = JSON.parse(babo);
+            $('#cart-items').text(boba.length);
+        });
+        let deleteButton = $('<button>');
+        newDiv.append(deleteButton);
+        deleteButton.on('click', function () {
+            amountCount[drinkingProducts[i].name] -= 1;
+            cart.splice(i, 1);
+            $('#cart-items').html(cart.length);
+            console.log(cart);
+            putInStorage();
+        });
     });
 
     function putInStorage() {
         let stringStorage = JSON.stringify(storage);
+        let cartStringify = JSON.stringify(cart);
         localStorage.clear('product');
         localStorage.setItem('product', stringStorage);
+        localStorage.setItem('stringCart', cartStringify);
     }
 
     function createProduct() {
@@ -78,5 +99,7 @@ $(document).ready(function() {
         products.push(newProduct);        
     }
     
+    
+
 })
 

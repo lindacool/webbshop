@@ -3,6 +3,7 @@
 @import 'header';
 @import 'products';
 @import 'adminpage';
+@import 'welcomepage';
 
 @mixin smallphone {
     @media (max-width: 576px) { @content; }
@@ -19,7 +20,8 @@
 
 @import url(../font/firstorder.ttf);
 
-body {
+.mainbody {
+    background-color: white;
     padding: 0;
     display: flex;
     flex-direction: column;
