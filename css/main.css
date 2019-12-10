@@ -1,5 +1,10 @@
 @import url(../font/firstorder.ttf);
 .navcontainer {
+  z-index: 999;
+  background-color: white;
+  position: sticky !important;
+  top: 0;
+  border-bottom: 1px solid black;
   position: relative; }
   @media (min-width: 768px) {
     .navcontainer {
@@ -7,11 +12,9 @@
       flex-direction: row;
       justify-content: space-between; } }
   .navcontainer .deercontainer {
+    padding-left: 10px;
     display: none;
-    width: 10%;
-    position: relative;
-    left: 10px;
-    top: 5px; }
+    width: 10%; }
     @media (min-width: 768px) {
       .navcontainer .deercontainer {
         display: inline-block; } }
@@ -31,14 +34,14 @@
     justify-content: space-around;
     padding-left: 0; }
     @media (min-width: 768px) {
-      .navcontainer .tabletnavcontainer .listcontainer {
-        display: flex;
-        justify-content: space-around; } }
-    @media (min-width: 768px) {
       .navcontainer .tabletnavcontainer {
         width: 75%;
         display: inline-block;
         text-align: center; } }
+    @media (min-width: 768px) {
+      .navcontainer .tabletnavcontainer .listcontainer {
+        display: flex;
+        justify-content: space-around; } }
     .navcontainer .tabletnavcontainer li {
       list-style: none; }
       .navcontainer .tabletnavcontainer li .listbuttons {
@@ -52,7 +55,17 @@
             margin: 0 5px; } }
   @media (min-width: 768px) {
     .navcontainer .basketcontainer {
-      width: 10%; } }
+      width: 10%;
+      display: inline-block; } }
+  .navcontainer .basketcontainer i {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 1.8em; }
+  .navcontainer .basketcontainer .badge {
+    position: absolute;
+    right: 12px;
+    top: 15px; }
   .navcontainer .js-toggleMenu {
     background-image: url(../img/polar.jpg);
     background-position: center;
@@ -129,12 +142,6 @@
       top: 0;
       left: 0;
       z-index: 8; }
-  .navcontainer i {
-    font-size: 1.8em; }
-  .navcontainer .badge {
-    position: absolute;
-    right: 12px;
-    top: 10px; }
 
 .tabletdropdowncontainer {
   display: none;
@@ -272,7 +279,7 @@ body .inputcontainer {
     border-radius: 5px; }
 
 .welcomebody {
-  background-image: url("../img/startimg2.jpg");
+  background-image: url("../img/bakgrund2.jpg");
   background-color: #cccccc;
   height: 800px;
   background-position: left;
@@ -284,22 +291,33 @@ body .inputcontainer {
   @media (min-width: 768px) {
     .welcomebody {
       background-position: center; } }
+  .welcomebody .welcome-wrapper {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding: 20px;
+    width: 80%; }
+    @media (min-width: 768px) {
+      .welcomebody .welcome-wrapper {
+        width: 50%; } }
   .welcomebody h1 {
     text-align: center;
-    margin-top: 100px; }
+    margin: 100px 0; }
   .welcomebody p {
     text-align: center;
-    margin-top: 200px;
     font-weight: bold;
     color: white;
     background-color: gray;
-    opacity: 0.5;
     width: 80%;
     max-width: 600px;
     border-radius: 5px; }
   .welcomebody .age-form {
     background-color: gray;
-    opacity: 0.5;
+    padding: 10px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-around;
     width: 175px;
@@ -309,7 +327,6 @@ body .inputcontainer {
       .welcomebody .age-form .inputcontainer #year {
         width: 100%; }
       .welcomebody .age-form .inputcontainer input {
-        opacity: 1;
         width: 70%;
         text-align: center;
         margin: 10px auto;
@@ -318,12 +335,11 @@ body .inputcontainer {
         border-radius: 5px;
         max-width: 60px; }
       .welcomebody .age-form .inputcontainer label {
-        opacity: 1;
         color: white;
         text-align: center; }
   .welcomebody #agebutton {
     border: 1px solid black;
-    background-color: darkslategray;
+    background-color: whitesmoke;
     border-radius: 5px; }
 
 .mainbody {
