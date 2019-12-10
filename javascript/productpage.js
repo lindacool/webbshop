@@ -32,8 +32,8 @@ $(document).ready(function() {
 
     let amountCount = [];
 
-    $(drinkingProducts).each(function(i){
-        console.log(i);
+    $(drinkingProducts).each(function(i, x){
+        console.log(x);
         let newDiv = $('<div>').addClass('productcontainer');
         let productName = $('<span>').html(drinkingProducts[i].name);
         productName.addClass('productname');
@@ -43,7 +43,8 @@ $(document).ready(function() {
         productImg.addClass('productimg');
         productImg.on("click", function(){
             storage.push(drinkingProducts[i]);
-            putInStorage();
+            // putInStorage();
+
             location.href = 'specificproduct.html';
         });
         newDiv.append(productImg);
@@ -59,11 +60,12 @@ $(document).ready(function() {
         amountCount[drinkingProducts[i].name] = 0;
         newButton.on('click', function(){
             amountCount[drinkingProducts[i].name] += 1;
-            cart.push(drinkingProducts[i]);
-            putInStorage();
-            let babo = localStorage.getItem('stringCart');
-            let boba = JSON.parse(babo);
-            $('#cart-items').text(boba.length);
+            cart.push(new ProductInCart(drinkingProducts[i],0));
+            // putInStorage();
+            pushToCart(drinkingProducts[i]);
+            // let babo = localStorage.getItem('stringCart');
+            // let boba = JSON.parse(babo);
+            // $('#cart-items').text(boba.length);
             console.log(amountCount);
         });
         let deleteButton = $('<button>');
@@ -86,6 +88,26 @@ $(document).ready(function() {
         localStorage.setItem('stringCart', cartStringify);
     }
 
+    function ProductInCart(p,a) {
+        this.product = p;
+        this.amount = a;
+    }
+
+
+    
+    function pushToCart(productsToAdd){
+        $(cart).each(function(i){
+            if(cart[i].product.name === productsToAdd.name) {
+                cart[i].amount ++;
+            } else {
+            // addProduct = new ProductInCart(productsToAdd, ett);
+            // cart.push(addProduct); 
+            }
+        });
+        console.log(cart);
+        console.log(cart[0].product.name);
+
+    }
     function createProduct() {
         let prodName = $('#prodname').val();
         let prodPrice = parseInt($('#prodprice').val());
