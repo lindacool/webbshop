@@ -27,6 +27,15 @@
     flex-direction: column;
     flex: wrap;
     header {
+        .thingy {
+            position: absolute;
+            bottom: 51px;
+            width: 100%;
+            height: 30px;
+             background-color: white;
+            background-size: cover;clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+            
+        }
         width: 100%;
         height: 650px;
         background-image: url(../img/header.jpg);
@@ -58,6 +67,8 @@
             }
         }
     }
+
+
 
     .wrapper {
         display: flex;

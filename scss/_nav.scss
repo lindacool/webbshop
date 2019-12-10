@@ -56,6 +56,8 @@
         li {
             list-style: none;
         .listbuttons {
+            background-color: white;
+                border: none;
                 margin-top: 20px;
                 display: none;
                 @include tablet {
@@ -79,11 +81,12 @@
     background-size: cover;
     position: relative; 
     left: 10px;
-    top: 10px;
+    top: 0;
     z-index: 9; 
     height: 50px; 
     width: 40px; 
     border: none;
+    background-color: white;
     @include tablet {
         display: none;
     }
@@ -103,6 +106,8 @@
             margin-top: 10px;
             font-weight: bold;
             position: relative;
+            border: none;
+            background-color: white;
             
         }
         .js-drinkMenu {
@@ -117,6 +122,8 @@
         }
         .js-toggleSnow {
             font-weight: bold;
+            border: none;
+            background-color: white;
         }
         .js-snowMenu {
             width: 50%;
@@ -129,6 +136,8 @@
         }
         .js-toggleTobacco {
             font-weight: bold;
+            border: none;
+            background-color: white;
         }
         .js-tobaccoMenu {
             width: 50%;
@@ -141,6 +150,8 @@
         }
         .js-toggleGuns {
             font-weight: bold;
+            border: none;
+            background-color: white;
         }
         .js-gunsMenu {
             width: 50%;
@@ -179,6 +190,8 @@
             display: flex;
             flex-direction: column;
             .tabletdropbutton {
+                background-color: white;
+                border: none;
                 width: 100%;
                 text-align: start;
             }
