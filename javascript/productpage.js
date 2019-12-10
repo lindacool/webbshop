@@ -85,14 +85,17 @@ $(document).ready(function() {
         localStorage.setItem('stringCart', cartStringify);
     }
 
-    function createProduct() {
+    function createProduct(produc) {
         let prodName = $('#prodname').val();
         let prodPrice = parseInt($('#prodprice').val());
         let ProdDescr = $('#proddescr').val();
         let imgUrl = '../img/'+$('#imgurl').val();
         let newProduct = new Product(prodName,prodPrice,ProdDescr,imgUrl)
 
-        products.push(newProduct);        
+        drinkingProducts.push(newProduct);
+        localStorage.setItem('newproduct', newProduct);    
+        console.log(newProduct);
+        console.log(drinkingProducts);   
     }
     
     
