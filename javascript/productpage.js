@@ -108,7 +108,8 @@ $(document).ready(function() {
         console.log(cart[0].product.name);
 
     }
-    function createProduct(produc) {
+
+    function createProduct() {
         let prodName = $('#prodname').val();
         let prodPrice = parseInt($('#prodprice').val());
         let ProdDescr = $('#proddescr').val();
