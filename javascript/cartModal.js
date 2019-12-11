@@ -13,6 +13,8 @@ $("#basket").on("click", function(){
     
     $("#divmodal, .innerModal").addClass("active");
     
+
+
 });
 // Ta bort class "active"
 $(".close, #divmodal").on("click", function() {

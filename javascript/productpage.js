@@ -29,11 +29,10 @@ $(document).ready(function() {
 
     let cart = [];
     let storage = [];
-
+    let linda = [];
     let amountCount = [];
 
     $(drinkingProducts).each(function(i, x){
-        console.log(x);
         let newDiv = $('<div>').addClass('productcontainer');
         let productName = $('<span>').html(drinkingProducts[i].name);
         productName.addClass('productname');
@@ -43,7 +42,7 @@ $(document).ready(function() {
         productImg.addClass('productimg');
         productImg.on("click", function(){
             storage.push(drinkingProducts[i]);
-            // putInStorage();
+            putInStorage();
 
             location.href = 'specificproduct.html';
         });
@@ -61,12 +60,14 @@ $(document).ready(function() {
         newButton.on('click', function(){
             amountCount[drinkingProducts[i].name] += 1;
             cart.push(new ProductInCart(drinkingProducts[i],0));
+            linda.push(drinkingProducts[i]);
             // putInStorage();
             pushToCart(drinkingProducts[i]);
             // let babo = localStorage.getItem('stringCart');
             // let boba = JSON.parse(babo);
             // $('#cart-items').text(boba.length);
-            console.log(amountCount);
+            // console.log(amountCount);
+            console.log(linda);
         });
         let deleteButton = $('<button>');
         newDiv.append(deleteButton);
@@ -81,11 +82,11 @@ $(document).ready(function() {
     
 
     function putInStorage() {
-        let stringStorage = JSON.stringify(storage);
-        let cartStringify = JSON.stringify(cart);
-        localStorage.clear('product');
-        localStorage.setItem('product', stringStorage);
-        localStorage.setItem('stringCart', cartStringify);
+        // let stringStorage = JSON.stringify(storage);
+        let lindaStringify = JSON.stringify(linda);
+        // localStorage.clear('product');
+        // localStorage.setItem('product', stringStorage);
+        localStorage.setItem('stringCart', lindaStringify);
     }
 
     function ProductInCart(p,a) {
@@ -99,13 +100,15 @@ $(document).ready(function() {
         $(cart).each(function(i){
             if(cart[i].product.name === productsToAdd.name) {
                 cart[i].amount ++;
-            } else {
-            // addProduct = new ProductInCart(productsToAdd, ett);
-            // cart.push(addProduct); 
+                
+            } 
+            else {
+                
             }
         });
-        console.log(cart);
-        console.log(cart[0].product.name);
+        // console.log(cart);
+        //console.log(cart[0].product.name); == KARHU
+
 
     }
 
