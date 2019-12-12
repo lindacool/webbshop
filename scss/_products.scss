@@ -6,6 +6,12 @@
     @media (min-width: 992px) { @content; }
 }
 
+.specificproduct {
+    display: none;
+    width: 100%;
+    height: 800px;
+    background-color: black;
+}
 #product-wrapper {
     background-image: url(../img/wood2.jpg);
     background-position: center;

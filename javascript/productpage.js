@@ -15,6 +15,11 @@ $(document).ready(function() {
         this.description = d;
         this.img = i;
     }
+    
+    function ProductInCart(p,a) {
+        this.product = p;
+        this.amount = a;
+    }
     let hb = new Product('Crazy Moose',500,'Finaste HB filtrerat genom älgskägg','../img/dunk.jpg');
     let explorer = new Product('Explorer',150,'Från Tyskland','../img/explorer.jpg')
     let egetsnus = new Product('Göre själv',100,'Inte så jävla gott, men billigt','../img/egetsnus.jpg');
@@ -32,8 +37,8 @@ $(document).ready(function() {
 
     let amountCount = [];
 
-    $(drinkingProducts).each(function(i, x){
-        console.log(x);
+    $(drinkingProducts).each(function(i){
+        
         let newDiv = $('<div>').addClass('productcontainer');
         let productName = $('<span>').html(drinkingProducts[i].name);
         productName.addClass('productname');
@@ -88,16 +93,14 @@ $(document).ready(function() {
         localStorage.setItem('stringCart', cartStringify);
     }
 
-    function ProductInCart(p,a) {
-        this.product = p;
-        this.amount = a;
-    }
+ 
 
 
     
     function pushToCart(productsToAdd){
+        new ProductInCart(drinkingProducts[i],0);
         $(cart).each(function(i){
-            if(cart[i].product.name === productsToAdd.name) {
+            if(cart[i].product.name != productsToAdd.name) {
                 cart[i].amount ++;
             } else {
             // addProduct = new ProductInCart(productsToAdd, ett);
@@ -121,8 +124,5 @@ $(document).ready(function() {
         console.log(newProduct);
         console.log(drinkingProducts);   
     }
-    
-    
-
 })
 

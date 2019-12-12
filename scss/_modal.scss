@@ -11,27 +11,56 @@
     width: 100%;
     height: 100%;
     
-.innerModal{
-    background-color: #fff; 
-    visibility: hidden;
-    width: 500px;
-    height: 300px;
-    padding: 25px;
-    margin: 15% auto;
-    border-radius: 4px;
-    .modalcontent {
-        .quantity {
-            
-        }
-        .img-container {
-
-        }
-        .title {
-
-        }
-        .item-price {
-
-        }
+    .innerModal{
+        background-color: #fff; 
+        visibility: hidden;
+        width: 500px;
+        height: auto;
+        padding: 25px;
+        margin: 15% auto;
+        border-radius: 4px;
+        #modalcontent {
+            .listcontainer {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .modalimg {
+                    width: auto;
+                    height: 50px;
+                }
+                .modalamount {
+                    width: 10%;
+                }
+                .modalnameprice {
+                    width: 50%;
+                }
+                .modaltotprice {
+                    width: 10%;
+                }
+            }
+            // display: flex;
+            // flex-direction: row;
+            // flex-wrap: wrap;
+            // width: 90%;
+            // .img-container {
+            //     width: 20%;
+            //     img {
+            //         width: 100%;
+            //         height: 50px;
+            //         }
+            // }
+            // .quantity {
+            //     width: 10%;
+            //     line-height: 50px;
+            // }
+            // .title {
+            //     width: 50%;
+            //     line-height: 50px;
+            // }
+            // .item-price {
+            //     width: 10%;
+            //     line-height: 50px;
+            // }
     }
     .close{
         cursor: pointer;
