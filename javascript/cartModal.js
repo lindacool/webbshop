@@ -1,9 +1,6 @@
 $(document).ready(function() {
 
 $("#basket").on("click", function(){
-    // $('.img-container').html('');
-    // $('.quantity').html('');
-    // $('.title').html('');
     $('.listcontainer').html('');
 
     
