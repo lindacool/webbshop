@@ -52,8 +52,8 @@
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         .productimg {
-            width: 300px;
-            height: auto;
+            width: auto;
+            height: 200px;
             @include tablet {
                 width: 50%;
             }

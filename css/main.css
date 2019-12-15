@@ -284,8 +284,8 @@ body {
       width: 100%;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
     #product-wrapper .productcontainer .productimg {
-      width: 300px;
-      height: auto; }
+      width: auto;
+      height: 200px; }
       @media (min-width: 768px) {
         #product-wrapper .productcontainer .productimg {
           width: 50%; } }
@@ -396,19 +396,28 @@ body .inputcontainer {
     padding: 25px;
     margin: 15% auto;
     border-radius: 4px; }
-    #divmodal .innerModal #modalcontent .listcontainer {
+    #divmodal .innerModal #modalcontent {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between; }
-      #divmodal .innerModal #modalcontent .listcontainer .modalimg {
-        width: auto;
-        height: 50px; }
-      #divmodal .innerModal #modalcontent .listcontainer .modalamount {
-        width: 10%; }
-      #divmodal .innerModal #modalcontent .listcontainer .modalnameprice {
-        width: 50%; }
-      #divmodal .innerModal #modalcontent .listcontainer .modaltotprice {
-        width: 10%; }
+      flex-direction: column;
+      justify-content: center; }
+      #divmodal .innerModal #modalcontent .listcontainer {
+        margin: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; }
+        #divmodal .innerModal #modalcontent .listcontainer .modalimg {
+          width: auto;
+          height: 50px; }
+        #divmodal .innerModal #modalcontent .listcontainer .modalamount {
+          width: 10%; }
+        #divmodal .innerModal #modalcontent .listcontainer .modalnameprice {
+          width: 50%; }
+        #divmodal .innerModal #modalcontent .listcontainer .modaltotprice {
+          width: 10%; }
+      #divmodal .innerModal #modalcontent .totalprice {
+        margin: 20px auto;
+        font-weight: bold;
+        color: green; }
     #divmodal .innerModal .close {
       cursor: pointer;
       transform: rotate(45deg); }

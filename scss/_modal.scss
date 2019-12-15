@@ -20,7 +20,11 @@
         margin: 15% auto;
         border-radius: 4px;
         #modalcontent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;    
             .listcontainer {
+                margin: 20px;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -37,6 +41,11 @@
                 .modaltotprice {
                     width: 10%;
                 }
+            }
+            .totalprice {
+                margin: 20px auto;
+                font-weight: bold;
+                color: green;
             }
             // display: flex;
             // flex-direction: row;
