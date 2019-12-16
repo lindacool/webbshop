@@ -13,7 +13,8 @@
     background-color: black;
 }
 #product-wrapper {
-    background-image: url(../img/wood2.jpg);
+    background-image: url(../img/bakgrundoheader/wood2.jpg);
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -27,7 +28,7 @@
     }
 .productcontainer {
     border: 1px solid #8d999948;
-    height: 500px;
+    height: 100%;
     width: 90%;
     background-color: white;
     margin-top: 40px;
@@ -40,11 +41,12 @@
     border-radius: 5px;
     box-shadow: 0px 0px 10px 2px rgba(141,153,153,1);
     @include tablet {
+        height: 600px;
         width: 45%;
     }
     @include desktop {
         width: 22%;
-        height: 350px;
+
     }
         .productname {
             font-size: large;
@@ -52,11 +54,13 @@
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         .productimg {
-            width: auto;
-            height: 200px;
-            @include tablet {
-                width: 50%;
-            }
+            width: 100%;
+            height: auto;
+            // @include tablet {
+            //     width: 50%;
+            //     height: auto;
+            //     max-height: 200px;
+            // }
         }
         .productprice {
             font-weight: bold;
