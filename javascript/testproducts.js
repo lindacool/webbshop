@@ -209,18 +209,28 @@ $(document).ready(function() {
 
 $(".close").on("click", function() {
 
+    updateCart();
+
     $("#divmodal, .innerModal").removeClass("active");
 }); 
 
 function removeProduct(productToDelete) {
+
     modalContent.forEach(function(item, index) {
+        
         console.log(cart);
+        console.log(productToDelete);
         if(item.product.name === productToDelete.product.name) {
+            renderCart();
             if(item.amount > 1) {
-                item.amount--;
+                console.log('minus')
+                console.log(item.amount);
+                productToDelete.amount--;
+                // item.amount--;
             } else {
                 modalContent.splice(index, 1);
                 cart.splice(index, 1);
+                console.log('hej');
                 
             }
         }
