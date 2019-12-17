@@ -260,6 +260,7 @@ body {
       justify-content: space-around;
       flex-wrap: wrap; } }
   #product-wrapper .productcontainer {
+    font-family: monospace;
     border: 1px solid #8d999948;
     height: 100%;
     width: 90%;
@@ -281,14 +282,15 @@ body {
       #product-wrapper .productcontainer {
         width: 22%; } }
     #product-wrapper .productcontainer .productname {
-      font-size: large;
-      width: 100%;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+      font-size: 2em;
+      width: 100%; }
     #product-wrapper .productcontainer .productimg {
       width: 100%;
       height: auto; }
     #product-wrapper .productcontainer .productprice {
       font-weight: bold; }
+    #product-wrapper .productcontainer .productdescription {
+      font-size: 1.2em; }
     #product-wrapper .productcontainer i {
       cursor: pointer;
       font-size: 48px;
@@ -407,11 +409,16 @@ body .inputcontainer {
           width: auto;
           height: 50px; }
         #divmodal .innerModal #modalcontent .listcontainer .modalamount {
+          line-height: 50px;
           width: 10%; }
         #divmodal .innerModal #modalcontent .listcontainer .modalnameprice {
-          width: 50%; }
+          line-height: 50px;
+          width: 45%; }
         #divmodal .innerModal #modalcontent .listcontainer .modaltotprice {
-          width: 10%; }
+          line-height: 50px;
+          width: 15%; }
+        #divmodal .innerModal #modalcontent .listcontainer .deletebutton {
+          line-height: 50px; }
       #divmodal .innerModal #modalcontent .totalprice {
         margin: 20px auto;
         font-weight: bold;
@@ -430,6 +437,7 @@ body .inputcontainer {
     visibility: visible; }
 
 .mainbody, .productbody {
+  font-family: monospace;
   background-color: white;
   padding: 0;
   display: flex;

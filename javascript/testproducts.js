@@ -1,5 +1,9 @@
 $(document).ready(function() {
-    $('.js-ol').on('click', )
+
+    $("#basket").on("click", updateCart);
+
+    
+   
 // Bör få en femte parameter category
     function Product(n,p,d,i,c) {
         this.name = n;
@@ -14,7 +18,6 @@ $(document).ready(function() {
         this.amount = a;
     }
 
-    let amountCount = 0;
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 
@@ -37,51 +40,24 @@ $(document).ready(function() {
     
     
 
-    //function renderCart() {
-
-    //     cart.forEach(function(item) {
-    //         const p = $('<p>')
-    //         $(p).on("click", function() {removeItemFromCart(item.name)})
-    //         cart.push($(p).text(`${item.name} x ${item.amount}`))
-
-    //     })
-    //     for (let i = 0; i < cart.length; i++) {
-    //         $(".js-cart").html(cart[i])
-            
-    //     }
-
-    // }
 
     
 
     function renderCart(){
         let total=0;
-        localStorage.setItem('cart', JSON.stringify(cart));
-        for (let i=0; i<cart.length; i++) {
-        total+=cart[i].amount;
+        let badgeCount = JSON.parse(localStorage.getItem('cart')) || 0;
+        for (let i=0; i<badgeCount.length; i++) {
+        total+=badgeCount[i].amount;
                 }
         $('.badge').html(total);
     }
 
 
+    renderCart();
 
 
-
-    // function renderCart(){
-    //     localStorage.setItem('cart', JSON.stringify(cart));
-    //     let babo = localStorage.getItem('cart');
-    //     let bobo = JSON.parse(babo);
-    //     for (let i = 0; i < bobo.length; i++) {
-    //         const total = bobo[i].amount += 0;
-    //     }
-    //     // $('.badge').html(total);
-    // }
-    
     $(products).each(function(i){
-        console.log(products[i].category);
 
-
-        amountCount[products[i].name] = 0;
         
         let newDiv = $('<div>').addClass('productcontainer');
         let productName = $('<span>').html(products[i].name);
@@ -107,19 +83,11 @@ $(document).ready(function() {
             addItemToCart(products[i]);
         });
         newDiv.append(plusButton);
-    
 
-        // let deleteButton = $('<button>').addClass('deletebutton fas fa-minus');
-        // deleteButton.on('click', function() {
-        //     removeItemFromCart(products[i]);
-        // });
-        // newDiv.append(deleteButton);
-        // deleteButton.html("wasdet");
         $('#product-wrapper').append(newDiv);
     });
     
    
-
     function addItemToCart(targetProduct) {
 
         let foundProduct = false;
@@ -128,46 +96,25 @@ $(document).ready(function() {
                 foundProduct = true;
                 item.amount++;
             }
-    
-            // const matchingItem = cart.find(function(item) {
-            //     return item.name === targetName
-            // })
-    
-            
         });
 
         if(foundProduct === false) {
             cart.push(new ProductInCart(targetProduct,1));
 
         }
-
+        localStorage.setItem('cart', JSON.stringify(cart));
         renderCart();
 
     }
 
-    // function removeItemFromCart(targetProduct) {
 
-    //     cart.forEach(function(item, index) {
-    //         if(item.product.name === targetProduct.name) {
-    //             if(item.amount > 1) {
-    //                 item.amount--;
-    //             } else {
-    //                 cart.splice(index, 1);
-    //             }
-    //         }
-    //     });
-    
-    //     renderCart();
-    // }
 
-    $("#basket").on("click", updateCart);
 
     function updateCart() {
     $('#modalcontent').html('');
 
-    
-
-    let getData = localStorage.getItem('cart');
+    let getData = [];
+    getData = localStorage.getItem('cart');
     modalContent = JSON.parse(getData);
     $(modalContent).each(function(i) {
         
@@ -183,7 +130,7 @@ $(document).ready(function() {
             $("<span>").html(`${modalContent[i].product.name}  ${modalContent[i].product.price} kr`).addClass('modalnameprice')
         ]);
         $(modalProduct).append([
-            $("<span>").html((modalContent[i].amount)*(modalContent[i].product.price)+'<br>').addClass('modaltotprice')
+            $("<span>").html((modalContent[i].amount)*(modalContent[i].product.price)+' kr').addClass('modaltotprice')
         ]);
         $(modalProduct).append([
             $('<i>').addClass('deletebutton fas fa-minus').on('click', function() {
@@ -204,50 +151,38 @@ $(document).ready(function() {
     
     $("#divmodal, .innerModal").addClass("active");
     
-    renderCart();
+
 }
 
 $(".close").on("click", function() {
-
-    updateCart();
-
     $("#divmodal, .innerModal").removeClass("active");
+    
+
 }); 
 
-function removeProduct(productToDelete) {
+    function removeProduct(productToDelete) {
+        modalContent.forEach(function(item, index) {
+            if(item.product.name === productToDelete.product.name) {
+                if(item.amount > 1) {
+                    item.amount--;
 
-    modalContent.forEach(function(item, index) {
-        
-        console.log(cart);
-        console.log(productToDelete);
-        if(item.product.name === productToDelete.product.name) {
-            renderCart();
-            if(item.amount > 1) {
-                console.log('minus')
-                console.log(item.amount);
-                productToDelete.amount--;
-                // item.amount--;
-            } else {
-                modalContent.splice(index, 1);
-                cart.splice(index, 1);
-                console.log('hej');
-                
+                } else {
+                    modalContent.splice(index, 1);
+                    cart.splice(index, 1);
+
+                    
+                }
             }
-        }
-    });
-    localStorage.setItem('cart', JSON.stringify(modalContent));    
-    updateCart();
-    // renderCart();
-}
+            
+        });
+        localStorage.setItem('cart', JSON.stringify(modalContent));    
+        updateCart();
+        renderCart();
+    }
 
-renderCart();
+
 
 })
-function specificProduct(data) {
-
-
-    $(".specificproduct").slideToggle();
-}
 
 
 

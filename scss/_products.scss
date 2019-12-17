@@ -27,6 +27,7 @@
 
     }
 .productcontainer {
+    font-family: monospace;
     border: 1px solid #8d999948;
     height: 100%;
     width: 90%;
@@ -49,9 +50,8 @@
 
     }
         .productname {
-            font-size: large;
+            font-size: 2em;
             width: 100%;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         .productimg {
             width: 100%;
@@ -66,6 +66,7 @@
             font-weight: bold;
         }
         .productdescription {
+            font-size: 1.2em;
 
         }
         i {

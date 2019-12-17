@@ -33,13 +33,19 @@
                     height: 50px;
                 }
                 .modalamount {
+                    line-height: 50px;
                     width: 10%;
                 }
                 .modalnameprice {
-                    width: 50%;
+                    line-height: 50px;
+                    width: 45%;
                 }
                 .modaltotprice {
-                    width: 10%;
+                    line-height: 50px;
+                    width: 15%;
+                }
+                .deletebutton {
+                    line-height: 50px;
                 }
             }
             .totalprice {
