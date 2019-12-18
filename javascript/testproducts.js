@@ -2,7 +2,10 @@ $(document).ready(function() {
 
     $("#basket").on("click", updateCart);
 
-    
+
+    $('.js-filter').on('click', function() {
+        filterProducts()
+    });
    
 // Bör få en femte parameter category
     function Product(n,p,d,i,c) {
@@ -18,27 +21,44 @@ $(document).ready(function() {
         this.amount = a;
     }
 
+    function Button(id,el) {
+        this.id = id;
+        this.element = el;
+    }
+
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 
 
 
-    let hb = new Product('Crazy Moose',500,'Finaste HB filtrerat genom älgskägg','../img/produktbilder/dryck/dunk.jpg','ol');
-    let explorer = new Product('Explorer',150,'Från Tyskland','../img/produktbilder/dryck/explorer.jpg','fin');
+    let hb = new Product('Crazy Moose',500,'<b>10L</b> HB filtrerat genom älgskägg','../img/produktbilder/dryck/dunk.jpg','ol');
+    let explorer = new Product('Explorer',150,'<b>70CL </b>Från Tyskland','../img/produktbilder/dryck/explorer.jpg','fin');
     let egetsnus = new Product('Göre själv',100,'Inte så jävla gott, men billigt','../img/produktbilder/tobak/egetsnus2.jpg','snus');
-    let ettan = new Product('Ettan',43,'Ett gott snus','../img/produktbilder/tobak/ettan2.png','snus');
+    let ettan = new Product('Ettan',29,'Ett gott snus','../img/produktbilder/tobak/ettan2.png','snus');
     let snokedja = new Product('Snökedja',1000,'Kör fö fa-an','../img/produktbilder/snow/snokedja2.jpg','snow');
-    let norrlands = new Product('Norrlands Guld',200,'Vid köp av tio flak, får du ett "Göre själv" snus-paket!','../img/produktbilder/dryck/norrlands.png','ol');
-    let kung = new Product('Kung', 12, 'KUNG', '../img/produktbilder/dryck/kung2.jpg','ol');
-    let karhu = new Product('Karhu',10,'Björn-öl','../img/produktbilder/dryck/karhu.jpg','ol');
-    let lapin = new Product('Lapin Kulta', 12, "Passar bra till ren", "../img/produktbilder/dryck/lapinkulta2.jpg",'ol');
-    let absolut = new Product('Absolut', 399,'Guldbröllop-fin', '../img/produktbilder/dryck/absolut2.jpg','fin');
-    let finhb = new Product('Authentic Burnwine by KoN', 1337, 'Renare HB än detta hittar du inte','../img/produktbilder/dryck/finHB.jpg','hem');
-    let krut = new Product("Krut-Conny's Värsta", 50, "Garanterat fart på festen", '../img/produktbilder/dryck/conny.jpg','hem');
-    let koskenkorva = new Product('Koskenkorva Vargtass', 299, 'Fint ska de va', '../img/produktbilder/dryck/vargtass.jpg','fin');
+    let norrlands = new Product('Norrlands Guld',200,'<b>24x33CL</b> Vid köp av tio flak, får du ett "Göre själv" snus-paket!','../img/produktbilder/dryck/norrlands.png','ol');
+    let kung = new Product('Kung', 12, '<b>50CL</b> KUNGEN dysh dysh dysh', '../img/produktbilder/dryck/kung2.jpg','ol');
+    let karhu = new Product('Karhu',10,'<b>33CL</b> Björn-öl','../img/produktbilder/dryck/karhu.jpg','ol');
+    let lapin = new Product('Lapin Kulta', 12, '<b>50CL</b> Passar bra till ren', '../img/produktbilder/dryck/lapinkulta2.jpg','ol');
+    let absolut = new Product('Absolut', 200,'<b>100CL</b> Guldbröllop-fin', '../img/produktbilder/dryck/absolut2.jpg','fin');
+    let finhb = new Product('HB by KON', 999, '<b>50CL</b> Renare HB än detta hittar du inte','../img/produktbilder/dryck/finHB.jpg','hem');
+    let krut = new Product("Krut-Conny's", 50, "<b>5L</b> Garanterat fart på festen", '../img/produktbilder/dryck/conny.jpg','hem');
+    let koskenkorva = new Product('Vargtass', 199, '<b>70CL</b> Fint ska de va', '../img/produktbilder/dryck/vargtass.jpg','fin');
     products = [norrlands, kung, karhu, explorer, hb, lapin, krut, finhb, koskenkorva, absolut, snokedja, ettan, egetsnus];
     
-    
+    let ol = new Button('ol',$('.js-ol'));
+    let fin = new Button('fin',$('.js-fin'));
+    let hem = new Button('hem',$('.js-hem'));
+    let kaffe = new Button('ol',$('.js-kaffe'));
+
+    let buttons = [ol, fin, hem, kaffe];
+
+    function filterProducts() {
+        $(buttons).each(function(i) {
+            console.log(buttons[i]);
+        })
+    }
+
 
 
     
@@ -90,6 +110,12 @@ $(document).ready(function() {
    
     function addItemToCart(targetProduct) {
 
+        if(localStorage.getItem('cart')) {
+            let getData = [];
+            getData = localStorage.getItem('cart');
+            cart = JSON.parse(getData);
+        }
+
         let foundProduct = false;
         cart.forEach(function(item) {
             if(item.product.name === targetProduct.name) {
@@ -104,6 +130,7 @@ $(document).ready(function() {
         }
         localStorage.setItem('cart', JSON.stringify(cart));
         renderCart();
+        basketCart();
 
     }
 
@@ -118,26 +145,40 @@ $(document).ready(function() {
     modalContent = JSON.parse(getData);
     $(modalContent).each(function(i) {
         
-        let modalProduct = $('<div>').addClass('listcontainer');
+        let checkoutItems = $('<div>').addClass('listcontainer');
 
-        $(modalProduct).append([
+        $(checkoutItems).append([
             $("<img>").attr('src', modalContent[i].product.img).addClass('modalimg')
         ]);
-        $(modalProduct).append([
+        $(checkoutItems).append([
             $("<span>").html(`${modalContent[i].amount} x `).addClass('modalamount')
         ]);
-        $(modalProduct).append([
-            $("<span>").html(`${modalContent[i].product.name}  ${modalContent[i].product.price} kr`).addClass('modalnameprice')
+        $(checkoutItems).append([
+            $("<span>").html(`${modalContent[i].product.name}`).addClass('modalnameprice')
         ]);
-        $(modalProduct).append([
-            $("<span>").html((modalContent[i].amount)*(modalContent[i].product.price)+' kr').addClass('modaltotprice')
+        $(checkoutItems).append([
+            $("<span>").html((modalContent[i].amount)*(modalContent[i].product.price)).addClass('modaltotprice')
         ]);
-        $(modalProduct).append([
+
+        $(checkoutItems).append([
+            $('<i>').addClass('addbutton fas fa-plus').on('click', function() {
+                modalContent[i].amount++;
+                localStorage.setItem('cart', JSON.stringify(modalContent));
+                renderCart();
+                updateCart();
+            })
+        ])
+        $(checkoutItems).append([
+            $("<span>").html('/').addClass('forwardslash')
+        ]);
+        $(checkoutItems).append([
             $('<i>').addClass('deletebutton fas fa-minus').on('click', function() {
                 removeProduct(modalContent[i])
             })
         ])
-        $('#modalcontent').append(modalProduct);
+
+
+        $('#modalcontent').append(checkoutItems);
  
        
     })
@@ -145,9 +186,16 @@ $(document).ready(function() {
     $(modalContent).each(function(i) {
         sum += (modalContent[i].amount) * (modalContent[i].product.price);
     })
-    $('#modalcontent').append([
+    let sumAndcheckout = $('<div>').addClass('sumandcheckout');
+    $(sumAndcheckout).append([
         $('<span>').html(`Din total summa:  ${sum}`).addClass('totalprice')
     ])
+    $(sumAndcheckout).append([
+        $('<span>').html('Till kassan').addClass('gotocheckout').on('click', function() {
+            window.location.href = '../html/checkout.html'
+        })
+    ])
+    $('#modalcontent').append(sumAndcheckout);
     
     $("#divmodal, .innerModal").addClass("active");
     
@@ -155,8 +203,9 @@ $(document).ready(function() {
 }
 
 $(".close").on("click", function() {
+    // localStorage.setItem('cart', JSON.stringify(modalContent));    
     $("#divmodal, .innerModal").removeClass("active");
-    
+    basketCart()
 
 }); 
 
@@ -178,10 +227,47 @@ $(".close").on("click", function() {
         localStorage.setItem('cart', JSON.stringify(modalContent));    
         updateCart();
         renderCart();
+        basketCart();
     }
 
+    //VARUKORG AT KASSASIDA
+    function basketCart(){
+    $('#basketcheckoutcart').html("");
+    let basketCart = JSON.parse(localStorage.getItem('cart'));
 
+    $(basketCart).each(function(i) {
+        
+        let checkoutItems = $('<div>').addClass('checkoutlists');
 
+        $(checkoutItems).append([
+            $("<img>").attr('src', basketCart[i].product.img).addClass('checkoutmodalimg')
+        ]);
+        $(checkoutItems).append([
+            $("<span>").html(`${basketCart[i].amount} x `).addClass('checkoutmodalamount')
+        ]);
+        $(checkoutItems).append([
+            $("<span>").html(`<b>${basketCart[i].product.name}</b>`).addClass('checkoutmodalnameprice')
+        ]);
+        $(checkoutItems).append([
+            $("<span>").html((basketCart[i].amount)*(basketCart[i].product.price)+' kr').addClass('checkoutmodaltotprice')
+        ]);
+        $('#basketcheckoutcart').append(checkoutItems);
+ 
+       
+    })
+    let sum = 0;
+    $(basketCart).each(function(i) {
+        sum += (basketCart[i].amount) * (basketCart[i].product.price);
+    })
+    let sumAndcheckout = $('<div>').addClass('sumandcheckout');
+    $(sumAndcheckout).append([
+        $('<span>').html(`<b>Din total summa:  ${sum} kr</b>`).addClass('checkouttotalprice')
+    ])
+
+    $('#basketcheckoutcart').append(sumAndcheckout);
+    }
+    
+    basketCart();
 })
 
 

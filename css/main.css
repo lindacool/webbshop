@@ -92,6 +92,9 @@
     top: 0;
     left: 0;
     z-index: 8; }
+    .navcontainer .js-menu button {
+      border: none;
+      background-color: white; }
     @media (min-width: 768px) {
       .navcontainer .js-menu {
         display: none !important; } }
@@ -312,7 +315,7 @@ body .inputcontainer {
     border-radius: 5px; }
 
 .welcomebody {
-  background-image: url("../img/bakgrund2.jpg");
+  background-image: url("../img/bakgrundoheader/bakgrund2.jpg");
   background-color: #cccccc;
   height: 800px;
   background-position: left;
@@ -377,6 +380,7 @@ body .inputcontainer {
     border-radius: 5px; }
 
 #divmodal {
+  font-family: monospace;
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   visibility: hidden;
@@ -389,19 +393,25 @@ body .inputcontainer {
   width: 100%;
   height: 100%; }
   #divmodal .innerModal {
+    position: relative;
     background-color: #fff;
     visibility: hidden;
-    width: 500px;
-    height: auto;
-    padding: 25px;
+    width: 85%;
+    height: 75%;
+    padding: 15px 15px 0px 15px;
     margin: 15% auto;
-    border-radius: 4px; }
+    border-radius: 4px;
+    overflow-y: scroll; }
+    @media (min-width: 768px) {
+      #divmodal .innerModal {
+        width: 60%; } }
     #divmodal .innerModal #modalcontent {
+      position: relative;
+      height: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: center; }
+      flex-direction: column; }
       #divmodal .innerModal #modalcontent .listcontainer {
-        margin: 20px;
+        margin: 15px;
         display: flex;
         flex-direction: row;
         justify-content: space-between; }
@@ -411,23 +421,59 @@ body .inputcontainer {
         #divmodal .innerModal #modalcontent .listcontainer .modalamount {
           line-height: 50px;
           width: 10%; }
+          @media (min-width: 768px) {
+            #divmodal .innerModal #modalcontent .listcontainer .modalamount {
+              font-size: 1.4em; } }
         #divmodal .innerModal #modalcontent .listcontainer .modalnameprice {
           line-height: 50px;
-          width: 45%; }
+          width: 50%; }
+          @media (min-width: 768px) {
+            #divmodal .innerModal #modalcontent .listcontainer .modalnameprice {
+              font-size: 1.4em; } }
         #divmodal .innerModal #modalcontent .listcontainer .modaltotprice {
           line-height: 50px;
           width: 15%; }
-        #divmodal .innerModal #modalcontent .listcontainer .deletebutton {
+          @media (min-width: 768px) {
+            #divmodal .innerModal #modalcontent .listcontainer .modaltotprice {
+              font-size: 1.4em; } }
+        #divmodal .innerModal #modalcontent .listcontainer i {
           line-height: 50px; }
-      #divmodal .innerModal #modalcontent .totalprice {
-        margin: 20px auto;
-        font-weight: bold;
-        color: green; }
+        #divmodal .innerModal #modalcontent .listcontainer .forwardslash {
+          line-height: 50px;
+          font-weight: 700;
+          font-size: 1.3em;
+          margin: 0 5px; }
+      #divmodal .innerModal #modalcontent .sumandcheckout {
+        font-weight: normal;
+        font-size: 1;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: 100%; }
+        @media (min-width: 768px) {
+          #divmodal .innerModal #modalcontent .sumandcheckout {
+            font-weight: bold;
+            font-size: 1.5em; } }
+        #divmodal .innerModal #modalcontent .sumandcheckout .totalprice {
+          margin-right: 40px;
+          width: 100%;
+          height: 70px;
+          line-height: 70px;
+          background-color: white;
+          color: green; }
+        #divmodal .innerModal #modalcontent .sumandcheckout .gotocheckout {
+          cursor: pointer; }
+          #divmodal .innerModal #modalcontent .sumandcheckout .gotocheckout:hover {
+            color: green; }
     #divmodal .innerModal .close {
-      cursor: pointer;
-      transform: rotate(45deg); }
-    #divmodal .innerModal .heart:hover .fas.fa-heart {
-      color: #8f1414; }
+      position: absolute;
+      top: -5px;
+      right: 0px;
+      transform: rotate(45deg);
+      font-size: 3em;
+      z-index: 100; }
+      #divmodal .innerModal .close:hover {
+        cursor: pointer; }
     #divmodal .innerModal a {
       color: rgba(0, 0, 0, 0.7); }
 
@@ -435,6 +481,145 @@ body .inputcontainer {
   visibility: visible; }
   #divmodal.active .innerModal.active {
     visibility: visible; }
+
+body {
+  font-family: monospace; }
+  body .third-header {
+    background-image: url("../img/bakgrundoheader/checkoutheader.jpg");
+    width: 100%;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    text-align: center; }
+    body .third-header h1 {
+      margin-top: 45px;
+      margin-bottom: 0px;
+      font-size: 2.5em;
+      color: white;
+      text-shadow: 0px 0px 5px black;
+      font-weight: 900;
+      font-family: "firstorder";
+      text-transform: uppercase; }
+      @media (min-width: 768px) {
+        body .third-header h1 {
+          font-size: 4em; } }
+  body .containerCheckout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px; }
+    @media (min-width: 768px) {
+      body .containerCheckout {
+        width: 70%;
+        align-items: center;
+        margin: 0px auto; } }
+    @media (min-width: 992px) {
+      body .containerCheckout {
+        width: 50%; } }
+    body .containerCheckout #basketcheckoutcart {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column; }
+      body .containerCheckout #basketcheckoutcart .checkoutlists {
+        margin: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; }
+        body .containerCheckout #basketcheckoutcart .checkoutlists .checkoutmodalimg {
+          height: 100px;
+          width: auto; }
+        body .containerCheckout #basketcheckoutcart .checkoutlists .checkoutmodalamount {
+          line-height: 100px; }
+        body .containerCheckout #basketcheckoutcart .checkoutlists .checkoutmodalnameprice {
+          line-height: 100px; }
+        body .containerCheckout #basketcheckoutcart .checkoutlists .checkoutmodaltotprice {
+          line-height: 100px; }
+      body .containerCheckout #basketcheckoutcart .sumandcheckout {
+        display: flex;
+        flex-direction: row;
+        justify-content: center; }
+        body .containerCheckout #basketcheckoutcart .sumandcheckout .checkouttotalprice {
+          color: green; }
+    body .containerCheckout div.backcolor {
+      background-color: green; }
+    body .containerCheckout #step1 {
+      cursor: pointer; }
+    body .containerCheckout .stepone {
+      height: 80px;
+      width: 100%;
+      background-color: #222222;
+      color: #f5f4f4; }
+      @media (min-width: 768px) {
+        body .containerCheckout .stepone {
+          margin-top: 25px; } }
+      body .containerCheckout .stepone .arrow {
+        line-height: 80px;
+        font-size: 1.1em;
+        margin-left: 10px; }
+    body .containerCheckout .wrapper {
+      width: 100%;
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; }
+      body .containerCheckout .wrapper .payment {
+        cursor: pointer; }
+        body .containerCheckout .wrapper .payment #payment {
+          display: none; }
+        body .containerCheckout .wrapper .payment input {
+          width: 100%;
+          padding: 7px;
+          margin-bottom: 10px; }
+        body .containerCheckout .wrapper .payment img {
+          width: 200px; }
+        body .containerCheckout .wrapper .payment h6 {
+          margin-top: 40px;
+          margin-bottom: 10px; }
+        body .containerCheckout .wrapper .payment .pay {
+          margin-bottom: 20px;
+          border: 1px solid #595908;
+          padding: 7px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center; }
+      body .containerCheckout .wrapper .form-area {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%; }
+        body .containerCheckout .wrapper .form-area .formcard {
+          margin-top: 10px; }
+        body .containerCheckout .wrapper .form-area .forminputs {
+          display: inline-block; }
+        body .containerCheckout .wrapper .form-area button {
+          padding: 5px;
+          border: none;
+          background-color: black;
+          color: #f5f4f4;
+          width: 100%;
+          margin-top: 50px; }
+        body .containerCheckout .wrapper .form-area label {
+          color: black;
+          margin-top: 10px;
+          margin-bottom: 2px; }
+        body .containerCheckout .wrapper .form-area input {
+          width: 100%;
+          border: 1px solid black;
+          padding: 7px; }
+      body .containerCheckout .wrapper .randomnr {
+        text-align: center;
+        font-size: 15px; }
+        body .containerCheckout .wrapper .randomnr #result {
+          font-size: 15px;
+          font-weight: bolder; }
+    body .containerCheckout #stepsecond {
+      display: none; }
+    body .containerCheckout #step3 {
+      display: none; }
+  body input.error {
+    border: 1px dashed red !important;
+    font-weight: 300; }
 
 .mainbody, .productbody {
   font-family: monospace;

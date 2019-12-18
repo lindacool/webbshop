@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
     $("#agebutton").on('click', function(){
-        var day = $("#day").val();
-        var month = $("#month").val();
-        var year = $("#year").val();
-        var age = 15;
-        var mydate = new Date();
+        let day = $("#day").val();
+        let month = $("#month").val();
+        let year = $("#year").val();
+        let age = 15;
+        let mydate = new Date();
         console.log(mydate);
         mydate.setFullYear(year, month-1, day);
         console.log(mydate);

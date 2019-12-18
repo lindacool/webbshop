@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--Jquery & UI -->
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/1e28897ab4.js" crossorigin="anonymous"></script>
+  <!--Validate-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+  <!-- Våra js/css -->
+  <link rel="stylesheet" href="../css/main.css">
+  <!-- <link rel="stylesheet" href="../css/checkout.css"> -->
+  <script type="text/javascript" src="../javascript/nav.js"></script>
+  <script type="text/javascript" src="../javascript/checkout.js"></script>
+  <script type="text/javascript" src="../javascript/testproducts.js"></script>  
+  <title>KON: Checkout</title>
+</head>
+
+<body>
+  <header class="third-header">
+    <h1 class="second-logo">kings of norrland</h1>
+  </header>
+  <div class="navcontainer">
+    <div class="deercontainer">
+      <div class="deer"></div>
+    </div>
+
+    <ul class="tabletnavcontainer">
+        <div class="listcontainer">
+          <li><button class="listbuttons" type="button"><b>Dricka</b></button></li>
+          <li><button class="listbuttons" type="button"><b>Vintertillbehör</b></button></li>
+          <li><button class="listbuttons" type="button"><b>Tobak</b></button></li>
+          <li><button class="listbuttons" type="button"><b>Jakt</b></button></li>
+        </div>
+      </ul>
+      <div class="basketcontainer">
+        <i class="fas fa-shopping-basket" id="basket"></i>
+        <span class="badge badge-warning" id="cart-items">0</span>
+      </div>
+      <button class="js-toggleMenu" type="button"></button>
+      <div class="js-menu">
+        <button class="js-toggleDrink" type="button">Dryck</button><br>
+        <div class="js-drinkMenu">
+          <button id="hem" class="js-hem js-filter" type="button">HB</button><br>
+          <button id="fin" class="js-fin js-filter" type="button">Finsprit</button><br>
+          <button id="ol" class="js-ol js-filter" type="button">öl</button><br>
+          <button id="kaffe" class="js-kaffe js-filter" type="button">Rivigt kaffe</button>
+        </div>
+        <button class="js-toggleSnow" type="button">Snötillbehör</button><br>
+        <div class="js-snowMenu">
+          <button id="snokedjor" type="button">Snökedjor</button><br>
+          <button id="extraljus" type="button">Extraljus</button><br>
+          <button id="snoskor" type="button">Snöskor</button><br>
+        </div>
+        <button class="js-toggleTobacco" type="button">Tobak</button><br>
+        <div class="js-tobaccoMenu">
+          <button id="portion" type="button">Portion</button><br>
+          <button id="los" type="button">Lös</button><br>
+          <button id="gordinegen" type="button">Gör ditt eget snus</button><br>
+        </div>
+        <button class="js-toggleGuns" type="button">Jakt</button><br>
+        <div class="js-gunsMenu">
+          <button id="bossa" type="button">Bössor</button><br>
+          <button id="kikarsikte" type="button">Kikarsikten</button><br>
+          <button id="axelrem" type="button">Axelrämmar</button><br>
+          <button id="kniv" type="button">Stora krigsknivar</button><br>
+        </div>
+      </div>
+    </div>
+    <div class="tabletdropdowncontainer">
+      <div class="tabletdropdown">
+          <div class="tabletprodutcs" id="tabletdrinks">
+            <button class="tabletdropbutton js-hb">HB</button>
+            <button class="tabletdropbutton js-ol">Öl</button>
+            <button class="tabletdropbutton js-fin">Finsprit</button>
+            <button class="tabletdropbutton js-kaffe">Rivigt kaffe</button>
+          </div>
+          <div class="tabletprodutcs" id="tabletsnow">
+              <button class="tabletdropbutton">Snökedjor</button>
+              <button class="tabletdropbutton">Extraljus</button>
+              <button class="tabletdropbutton">Snöskor</button>
+              <button class="tabletdropbutton">Plog</button>
+          </div>
+          <div class="tabletprodutcs" id="tablettobacco">
+              <button class="tabletdropbutton">Portion</button>
+              <button class="tabletdropbutton">Lös</button>
+              <button class="tabletdropbutton">Gör ditt eget</button>
+              <button class="tabletdropbutton">Snuff</button>
+          </div>
+          <div class="tabletprodutcs" id="tabletguns">
+              <button class="tabletdropbutton">Bössor</button>
+              <button class="tabletdropbutton">Kikarsikten</button>
+              <button class="tabletdropbutton">Axelrämmar</button>
+              <button class="tabletdropbutton">Stora krigsknivar</button>
+          </div>
+      </div>
+    </div>
+  
+
+  <div class="containerCheckout">
+
+    <!--Steg 1 varukorg-->
+    <div class="stepone">
+      <span class="arrow">Din varukorg <i class="fas fa-crown"></i></span>
+      
+    </div>
+    <div class="wrapper" id="basketcheckoutcart">
+    </div>
+    <i class="fas fa-angle-down fa-3x" id="step1"></i>
+
+
+    <!-- Steg 2 form-->
+    <div class="wrapper" id="stepsecond">
+      <div class="stepone" id="step2">
+        <span class="arrow">Mina uppgifter</span>
+      </div>
+      <div class="payment" id="cardpayment">
+        <h6>Välj betalsätt</h6>
+        <div class="pay">
+          <img alt="card" id="img" src="../img/betalningsmetoder-nummer2.png" />
+        </div>
+        <form action="" class="form-area" id="payment" name="form-area1"></form>
+      </div>
+      <h6>Dina uppgifter:</h6>
+      <form action="" class="form-area" name="form-area2">
+        <label for="name"><i class="fa fa-user"></i> Namn:</label><br>
+        <input class="forminputs" type="text" name="inputname" id="name" placeholder="Namn" required><br>
+
+        <label for="email"><i class="fa fa-envelope"></i> Email:</label><br>
+        <input class="forminputs" type="email" name="inputname" id="email" placeholder="info@kon.se" required><br>
+
+        <label for="adress"><i class="fa fa-address-card-o"></i> Gatuadress:</label><br>
+        <input class="forminputs" type="text" name="inputname" id="adress" placeholder="Adress" required><br>
+
+        <label for="Stad"><i class="fas fa-city"></i> Ort:</label><br>
+        <input class="forminputs" type="text" name="inputname" id="city" placeholder="Ort" required><br>
+
+        <label for="postnr"><i class="fab fa-slack-hash"></i> Postnr:</label><br>
+        <input class="forminputs" type="number" name="inputname" id="zipcode" placeholder="133 37" required><br>
+        <button type="submit" id="done">Godkänn och slutför köp</button>
+      </form>
+
+    </div>
+
+
+    <!-- <div class="stepone">
+  </div> -->
+    <div class="wrapper" id="step3">
+      <div class="randomnr">
+        Tack för att du handlar hos oss
+        <h6>Ditt ordernummer:</h6>
+        <span id="result"></span>
+        <div class="king"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="clearfix w-100">
+  <div class="footer-content">
+    <div class="content">
+      <ul>
+        <h5>Kontakt</h5>
+        <li><a href="#!"><i class="fas fa-home"></i> Adress, 133 37 Norrland</a></li>
+        <li><a href="#!"><i class="fas fa-phone-alt"></i> 023-252 92 00</a></li>
+        <li><a href="#!"><i class="fas fa-envelope"></i> info@kon.se</a></li>
+
+      </ul>
+    </div>
+
+    <div class="content">
+      <ul>
+        <h5>Hjälp</h5>
+        <li><a href="#">Kundtjänst</a></li>
+        <li><a href="#">Allmänna villkor</a></li>
+        <li><a href="#">Ångerrätt, retur & byte</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <ul>
+        <h5>Följ oss</h5>
+        <li>
+          <a href="#">
+            <i class="fab fa-facebook-f fa-lg"></i>
+            <span class="social-tag">Gilla vår sida!</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/kingsofnorrland/" target="_blank">
+            <i class="fab fa-instagram fa-lg"></i>
+            <span class="social-tag">Följ oss</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fab fa-youtube fa-lg"></i>
+            <span class="social-tag">Subscribe!</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="divmodal">
+    <div class="innerModal">
+      <button class="close">+</button>
+      <div id="modalcontent">
+
+      </div>
+    </div>
+  </div>
+  </footer>
+</body>
+
+</html>
