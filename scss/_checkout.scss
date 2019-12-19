@@ -21,6 +21,9 @@ body {
     background-position: center;
     background-size: cover;
     text-align: center;
+    a:hover {
+        text-decoration: none; 
+    }
     h1 {
         margin-top: 45px;
         margin-bottom: 0px;
@@ -30,6 +33,7 @@ body {
         font-weight: 900;
         font-family: "firstorder";
         text-transform: uppercase;
+    
         @include tablet{
             font-size: 4em;
         }
@@ -67,20 +71,25 @@ body {
                 height: 100px;
                 width: auto;
             }
-            .checkoutmodalamount {
+            span {
                 line-height: 100px;
+                font-size: 1.25em;
             }
-            .checkoutmodalnameprice {
-                line-height: 100px;
-            }
-            .checkoutmodaltotprice {
-                line-height: 100px;
-            }
+            // .checkoutmodalamount {
+            //     line-height: 100px;
+            // }
+            // .checkoutmodalnameprice {
+            //     line-height: 100px;
+            // }
+            // .checkoutmodaltotprice {
+            //     line-height: 100px;
+            // }
         }
         .sumandcheckout {
             display: flex;
             flex-direction: row;
             justify-content: center;
+            font-size: 1.5em;
             .checkouttotalprice {
                 color: green;
 
@@ -108,10 +117,10 @@ body {
         @include tablet {
             margin-top: 25px;
         }
-        .arrow {
+        .headers {
             line-height: 80px;
-            font-size: 1.1em;
-            margin-left: 10px;
+            font-size: 1.3em;
+            margin-left: 30px;
         }
     }
 
@@ -173,13 +182,25 @@ body {
             }
 
 
-            button {
+            #done {
+                height: 80px;
                 padding: 5px;
                 border: none;
                 background-color: black;
                 color: $text_color_step;
                 width: 100%;
                 margin-top: 50px;
+                font-size: 1.3em;
+            }
+            .confirmation {
+                height: 80px;
+                padding: 5px;
+                border: none;
+                background-color: green;
+                color: $text_color_step;
+                width: 100%;
+                margin-top: 50px;
+                font-size: 1.3em;
             }
 
             label {
@@ -195,6 +216,7 @@ body {
                 padding: 7px;
 
             }
+  
         }
 
         .randomnr {

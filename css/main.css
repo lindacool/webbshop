@@ -57,19 +57,21 @@
           .navcontainer .tabletnavcontainer li .listbuttons {
             display: inline-block;
             margin: 0 5px; } }
-  @media (min-width: 768px) {
-    .navcontainer .basketcontainer {
-      width: 10%;
-      display: inline-block; } }
-  .navcontainer .basketcontainer i {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 1.8em; }
-  .navcontainer .basketcontainer .badge {
-    position: absolute;
-    right: 12px;
-    top: 15px; }
+  .navcontainer .basketcontainer {
+    cursor: pointer; }
+    @media (min-width: 768px) {
+      .navcontainer .basketcontainer {
+        width: 10%;
+        display: inline-block; } }
+    .navcontainer .basketcontainer i {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 1.8em; }
+    .navcontainer .basketcontainer .badge {
+      position: absolute;
+      right: 12px;
+      top: 15px; }
   .navcontainer .js-toggleMenu {
     background-image: url(../img/nav/polar.jpg);
     background-position: center;
@@ -188,6 +190,9 @@
       width: 24%;
       display: flex;
       flex-direction: column; }
+      .tabletdropdowncontainer .tabletdropdown .tabletprodutcs a button {
+        border: none;
+        background-color: white; }
       .tabletdropdowncontainer .tabletdropdown .tabletprodutcs .tabletdropbutton {
         background-color: white;
         border: none;
@@ -242,6 +247,8 @@ body {
       @media (min-width: 768px) {
         body .second-header .second-logo {
           font-size: 4em; } }
+    body .second-header a:hover {
+      text-decoration: none; }
 
 .specificproduct {
   display: none;
@@ -250,7 +257,7 @@ body {
   background-color: black; }
 
 #product-wrapper {
-  background-image: url(../img/bakgrundoheader/wood2.jpg);
+  background-image: url(../img/bakgrundoheader/productforest.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -264,7 +271,7 @@ body {
       flex-wrap: wrap; } }
   #product-wrapper .productcontainer {
     font-family: monospace;
-    border: 1px solid #8d999948;
+    border: 1px solid black;
     height: 100%;
     width: 90%;
     background-color: white;
@@ -274,9 +281,7 @@ body {
     padding: 20px;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 2px #8d9999; }
+    justify-content: space-between; }
     @media (min-width: 768px) {
       #product-wrapper .productcontainer {
         height: 600px;
@@ -285,8 +290,15 @@ body {
       #product-wrapper .productcontainer {
         width: 22%; } }
     #product-wrapper .productcontainer .productname {
+      background-color: black;
+      color: white;
       font-size: 2em;
-      width: 100%; }
+      display: inline-block;
+      position: relative;
+      left: 10px;
+      top: 15px;
+      padding: 8px;
+      margin-bottom: 20px; }
     #product-wrapper .productcontainer .productimg {
       width: 100%;
       height: auto; }
@@ -339,13 +351,20 @@ body .inputcontainer {
       .welcomebody .welcome-wrapper {
         width: 50%; } }
   .welcomebody h1 {
-    text-align: center;
-    margin: 100px 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 4em; }
+    margin-top: 250px;
+    margin-bottom: 0px;
+    font-size: 4em;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    font-weight: 900;
+    font-family: "firstorder";
+    text-transform: uppercase; }
+    @media (min-width: 768px) {
+      .welcomebody h1 {
+        font-size: 5em; } }
   .welcomebody p {
     text-align: center;
-    font-weight: bold;
+    font-size: 1.3em;
     color: white;
     background-color: rgba(0, 0, 0, 0.2);
     width: 80%;
@@ -420,18 +439,21 @@ body .inputcontainer {
           height: 50px; }
         #divmodal .innerModal #modalcontent .listcontainer .modalamount {
           line-height: 50px;
+          font-size: 1.25em;
           width: 10%; }
           @media (min-width: 768px) {
             #divmodal .innerModal #modalcontent .listcontainer .modalamount {
               font-size: 1.4em; } }
         #divmodal .innerModal #modalcontent .listcontainer .modalnameprice {
           line-height: 50px;
+          font-size: 1.25em;
           width: 50%; }
           @media (min-width: 768px) {
             #divmodal .innerModal #modalcontent .listcontainer .modalnameprice {
               font-size: 1.4em; } }
         #divmodal .innerModal #modalcontent .listcontainer .modaltotprice {
           line-height: 50px;
+          font-size: 1.25em;
           width: 15%; }
           @media (min-width: 768px) {
             #divmodal .innerModal #modalcontent .listcontainer .modaltotprice {
@@ -445,11 +467,12 @@ body .inputcontainer {
           margin: 0 5px; }
       #divmodal .innerModal #modalcontent .sumandcheckout {
         font-weight: normal;
-        font-size: 1;
-        position: absolute;
+        font-size: 1.25em;
+        position: sticky;
         bottom: 0;
         text-align: center;
-        width: 100%; }
+        width: 100%;
+        background-color: white; }
         @media (min-width: 768px) {
           #divmodal .innerModal #modalcontent .sumandcheckout {
             font-weight: bold;
@@ -467,13 +490,15 @@ body .inputcontainer {
             color: green; }
     #divmodal .innerModal .close {
       position: absolute;
-      top: -5px;
-      right: 0px;
+      top: 0px;
+      right: 10px;
       transform: rotate(45deg);
       font-size: 3em;
-      z-index: 100; }
+      z-index: 100;
+      color: red; }
       #divmodal .innerModal .close:hover {
-        cursor: pointer; }
+        cursor: pointer;
+        transition: 0.1s; }
     #divmodal .innerModal a {
       color: rgba(0, 0, 0, 0.7); }
 
@@ -491,6 +516,8 @@ body {
     background-position: center;
     background-size: cover;
     text-align: center; }
+    body .third-header a:hover {
+      text-decoration: none; }
     body .third-header h1 {
       margin-top: 45px;
       margin-bottom: 0px;
@@ -530,16 +557,14 @@ body {
         body .containerCheckout #basketcheckoutcart .checkoutlists .checkoutmodalimg {
           height: 100px;
           width: auto; }
-        body .containerCheckout #basketcheckoutcart .checkoutlists .checkoutmodalamount {
-          line-height: 100px; }
-        body .containerCheckout #basketcheckoutcart .checkoutlists .checkoutmodalnameprice {
-          line-height: 100px; }
-        body .containerCheckout #basketcheckoutcart .checkoutlists .checkoutmodaltotprice {
-          line-height: 100px; }
+        body .containerCheckout #basketcheckoutcart .checkoutlists span {
+          line-height: 100px;
+          font-size: 1.25em; }
       body .containerCheckout #basketcheckoutcart .sumandcheckout {
         display: flex;
         flex-direction: row;
-        justify-content: center; }
+        justify-content: center;
+        font-size: 1.5em; }
         body .containerCheckout #basketcheckoutcart .sumandcheckout .checkouttotalprice {
           color: green; }
     body .containerCheckout div.backcolor {
@@ -554,10 +579,10 @@ body {
       @media (min-width: 768px) {
         body .containerCheckout .stepone {
           margin-top: 25px; } }
-      body .containerCheckout .stepone .arrow {
+      body .containerCheckout .stepone .headers {
         line-height: 80px;
-        font-size: 1.1em;
-        margin-left: 10px; }
+        font-size: 1.3em;
+        margin-left: 30px; }
     body .containerCheckout .wrapper {
       width: 100%;
       margin-top: 10px;
@@ -592,13 +617,24 @@ body {
           margin-top: 10px; }
         body .containerCheckout .wrapper .form-area .forminputs {
           display: inline-block; }
-        body .containerCheckout .wrapper .form-area button {
+        body .containerCheckout .wrapper .form-area #done {
+          height: 80px;
           padding: 5px;
           border: none;
           background-color: black;
           color: #f5f4f4;
           width: 100%;
-          margin-top: 50px; }
+          margin-top: 50px;
+          font-size: 1.3em; }
+        body .containerCheckout .wrapper .form-area .confirmation {
+          height: 80px;
+          padding: 5px;
+          border: none;
+          background-color: green;
+          color: #f5f4f4;
+          width: 100%;
+          margin-top: 50px;
+          font-size: 1.3em; }
         body .containerCheckout .wrapper .form-area label {
           color: black;
           margin-top: 10px;

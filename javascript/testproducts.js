@@ -36,7 +36,7 @@ $(document).ready(function() {
     let egetsnus = new Product('Göre själv',100,'Inte så jävla gott, men billigt','../img/produktbilder/tobak/egetsnus2.jpg','snus');
     let ettan = new Product('Ettan',29,'Ett gott snus','../img/produktbilder/tobak/ettan2.png','snus');
     let snokedja = new Product('Snökedja',1000,'Kör fö fa-an','../img/produktbilder/snow/snokedja2.jpg','snow');
-    let norrlands = new Product('Norrlands Guld',200,'<b>24x33CL</b> Vid köp av tio flak, får du ett "Göre själv" snus-paket!','../img/produktbilder/dryck/norrlands.png','ol');
+    let norrlands = new Product('Norrlands Guld',200,'<b>24x33CL</b> Vid köp av tio flak, får du ett "Göre själv" snus-paket!','../img/produktbilder/dryck/norrlandsguld.jpg','ol');
     let kung = new Product('Kung', 12, '<b>50CL</b> KUNGEN dysh dysh dysh', '../img/produktbilder/dryck/kung2.jpg','ol');
     let karhu = new Product('Karhu',10,'<b>33CL</b> Björn-öl','../img/produktbilder/dryck/karhu.jpg','ol');
     let lapin = new Product('Lapin Kulta', 12, '<b>50CL</b> Passar bra till ren', '../img/produktbilder/dryck/lapinkulta2.jpg','ol');

@@ -42,6 +42,7 @@
                 }
                 .modalamount {
                     line-height: 50px;
+                    font-size: 1.25em;
                     width: 10%;
                     @include tablet {
                         font-size: 1.4em;
@@ -49,6 +50,7 @@
                 }
                 .modalnameprice {
                     line-height: 50px;
+                    font-size: 1.25em;
                     width: 50%;
                     @include tablet {
                         font-size: 1.4em;
@@ -56,6 +58,7 @@
                 }
                 .modaltotprice {
                     line-height: 50px;
+                    font-size: 1.25em;
                     width: 15%;
                     @include tablet {
                         font-size: 1.4em;
@@ -73,11 +76,12 @@
             }
             .sumandcheckout {
                 font-weight: normal;
-                font-size: 1;
-                position: absolute;
+                font-size: 1.25em;
+                position: sticky;
                 bottom: 0;
                 text-align: center;
                 width: 100%;
+                background-color: white;
                 @include tablet {
                     font-weight: bold;
                     font-size: 1.5em;
@@ -97,47 +101,21 @@
                     }
                 }
             }
-            // display: flex;
-            // flex-direction: row;
-            // flex-wrap: wrap;
-            // width: 90%;
-            // .img-container {
-            //     width: 20%;
-            //     img {
-            //         width: 100%;
-            //         height: 50px;
-            //         }
-            // }
-            // .quantity {
-            //     width: 10%;
-            //     line-height: 50px;
-            // }
-            // .title {
-            //     width: 50%;
-            //     line-height: 50px;
-            // }
-            // .item-price {
-            //     width: 10%;
-            //     line-height: 50px;
-            // }
     }
     .close{
         position: absolute;
-        top: -5px;
-        right: 0px;
+        top: 0px;
+        right: 10px;
         transform: rotate(45deg);
         font-size: 3em;
         z-index: 100;
+        color: red;
         &:hover {
             cursor: pointer;
+            transition: 0.1s;
         }
     }
-    // .heart{
-     
- 
-    // }.heart:hover .fas.fa-heart{
-    //     color:rgb(143, 20, 20);
-    // }
+
     a{
         color: rgba(0, 0, 0, 0.7);
     } 

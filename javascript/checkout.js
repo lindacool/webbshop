@@ -17,17 +17,18 @@ $(document).ready(function() {
     cvc.attr("type", "number");
     cvc.attr("class", "formcard");
     cvc.attr("id", "cvc");
-    cvc.attr("placeholder", "cvc");
+    cvc.attr("placeholder", "CVC");
     
     let nameC = $("<input>");
     nameC.attr("type", "text");
     nameC.attr("class", "formcard");
     nameC.attr("id", "nameC");
-    nameC.attr("placeholder", "Kings of Norrland");
+    nameC.attr("placeholder", "Ander Andersson");
+    $('#payment').append(card, mY, cvc, nameC);
+
     
     $('#img').click(function(){
         $('.pay').toggleClass('backcolor');
-        $('#payment').append(card, mY, cvc, nameC);
         $('#payment').slideToggle();
         
     })
@@ -43,10 +44,34 @@ $(document).ready(function() {
         let adress = $('#adress').val();
         let city = $('#city').val();
         let zip = $('#zipcode').val();
-
+        let cardnr = $('#cardnumber').val();
+        let date = $('#m-y').val();
+        let cvc = $('#cvc').val();
+        let nameC = $('#nameC').val();
         event.preventDefault();
 
         let isValid = true;
+
+        if(nameC.length < 3){
+            $("#nameC").addClass('error');
+            isValid = false;
+
+        }
+
+        if(cvc.length < 3){
+            $("#cvc").addClass('error');
+            isValid = false;
+        }
+
+        if(date.length < 3){
+            $("#m-y").addClass('error');
+            isValid = false;
+        }
+
+        if(cardnr.length < 3){
+            $("#cardnumber").addClass('error');
+            isValid = false;
+        }
 
         if(email.length < 3){
             $("#email").addClass('error');
@@ -73,8 +98,11 @@ $(document).ready(function() {
             $("#step3").slideToggle(1500);
             let max = Math.floor(Math.random()* 10000000000)
             $(".forminputs").removeClass('error');
+            $('#done').addClass('confirmation');
+            $('#done').removeClass('headers');
+            $('#done').removeAttr('id');
             $("#result").html(max);
-            let p = $('<p>').html("<strong>You are a true KING OF NORRLAND<strong>");
+            let p = $('<p>').html(`<strong>You are a true KING OF NORRLAND</strong><br>Ett bekräftelsemail har skickats till: ${email}`);
             $(".king").append(p)  
         }
     });

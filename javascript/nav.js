@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $('.js-ol').on('click', function() {
         
-        window.location.href ='html/productpage.html';
+    
     })
     $('.deer').on('click', function() {
         window.location.href ='../index.html';
